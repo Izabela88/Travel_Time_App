@@ -1,0 +1,16 @@
+@import "./navbar";
+@import "./variables";
+@import "./footer";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#front-page {
+  background: url("../../../img/black-camera-with-3-paris-landmarks-photos-163194.jpg")
+    center center/cover no-repeat;
+  filter: brightness(80%);
+  height: 100vh;
+}

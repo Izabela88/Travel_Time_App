@@ -1,0 +1,32 @@
+@import "./variables";
+
+#navbar {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  position: fixed;
+  background-color: transparent;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  z-index: 100;
+  ul {
+    display: flex;
+    align-items: flex-end;
+  }
+  li {
+    list-style: none;
+    padding: 1rem;
+    margin: 0 2rem;
+  }
+  a {
+    text-decoration: none;
+    letter-spacing: 1px;
+    color: $textColorTwo;
+    font-family: $textFont;
+  }
+}
+
+.nav-logo img {
+  height: 40px;
+  width: 200px;
+}
