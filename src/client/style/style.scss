@@ -7,10 +7,54 @@
   margin: 0;
   padding: 0;
 }
-
+// Section Front-Page
 #front-page {
   background: url("../../../img/black-camera-with-3-paris-landmarks-photos-163194.jpg")
     center center/cover no-repeat;
-  filter: brightness(80%);
+  filter: brightness(70%);
   height: 100vh;
+}
+// Section Travel
+#section-travel {
+  position: relative;
+}
+
+.travel-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 400px;
+  width: 500px;
+  top: -50vh;
+  left: 50vw;
+  transform: translateY(-50%) translateX(-50%);
+  background-color: $colorSix;
+  border-radius: 30px;
+  box-shadow: 3px 3px 4px 0px #333;
+  font-family: $textFont;
+  h2 {
+    text-align: center;
+    color: $textColorOne;
+  }
+  input {
+    width: 60%;
+    margin: 10px 0 10px;
+    height: 40px;
+    border: 1px solid $colorThree;
+  }
+  button {
+    width: 200px;
+    height: 40px;
+    border-radius: 30px;
+    font-family: $textFont;
+    background-color: $colorThree;
+    font-weight: bold;
+    font-size: 1rem;
+    &:hover {
+      background-color: $colorTwo;
+      cursor: pointer;
+    }
+  }
 }
