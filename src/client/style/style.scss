@@ -9,11 +9,29 @@
 }
 // Section Front-Page
 #front-page {
-  background: url("../../../img/black-camera-with-3-paris-landmarks-photos-163194.jpg")
-    center center/cover no-repeat;
-  filter: brightness(70%);
+  background: url("../../../img/cafe-camera-classic-close-up-413960.jpg") center
+    center/cover no-repeat;
+  filter: brightness(50%);
   height: 100vh;
 }
+
+.social-box {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 40vh;
+  left: 30px;
+  z-index: 101;
+  a {
+    color: $colorTwo;
+    font-size: 2rem;
+    line-height: 50px;
+    &:hover {
+      color: $colorSeven;
+    }
+  }
+}
+
 // Section Travel
 #section-travel {
   position: relative;
@@ -25,7 +43,7 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  height: 400px;
+  height: 350px;
   width: 500px;
   top: -50vh;
   left: 50vw;
@@ -42,14 +60,15 @@
     width: 60%;
     margin: 10px 0 10px;
     height: 40px;
-    border: 1px solid $colorThree;
+    border: 1px solid $colorSeven;
+    border-radius: 5px;
   }
   button {
     width: 200px;
     height: 40px;
     border-radius: 30px;
     font-family: $textFont;
-    background-color: $colorThree;
+    background-color: $colorSeven;
     font-weight: bold;
     font-size: 1rem;
     &:hover {
@@ -57,4 +76,70 @@
       cursor: pointer;
     }
   }
+}
+
+// Section About
+.who-box {
+  background: url("../../../img/photo-of-man-wearing-eyeglasses-3184611.jpg")
+    center center/cover no-repeat;
+  height: 100vh;
+  padding: 205px 80px;
+}
+
+.who-text {
+  width: 600px;
+  height: 450px;
+  background-color: $colorSix;
+  text-align: left;
+  padding: 30px;
+  font-family: $textFont;
+  h2 {
+    text-align: center;
+  }
+  p {
+    font-size: 0.85rem;
+  }
+}
+
+// Section Services
+#services-container {
+  height: 100vh;
+  font-family: $textFont;
+  position: relative;
+  color: $textColorTwo;
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+}
+.services-bg {
+  background: url("../../../img/action-architecture-blurred-background-building-386007.jpg")
+    center center/cover no-repeat;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  filter: brightness(60%);
+}
+
+.services-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  max-width: 1200px;
+  text-align: center;
+  div:nth-child(1) {
+    margin-left: 20%;
+  }
+  div:nth-child(2) {
+    margin-left: -50%;
+  }
+  div:nth-child(3) {
+    margin-left: 50%;
+  }
+}
+.services-box {
+  width: 300px;
 }
