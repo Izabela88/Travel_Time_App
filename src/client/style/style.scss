@@ -50,16 +50,15 @@
     left: 50vw;
     transform: translateY(-50%) translateX(-50%);
     background-color: transparent;
-    border: 3px solid $textColorTwo;
+    border: 1px solid $textColorTwo;
     border-radius: 10px;
-    // box-shadow: 4px 2px 17px 3px #e07015;
     font-family: $textFont;
     opacity: 1;
     h2 {
       text-align: center;
       text-transform: uppercase;
       letter-spacing: 2px;
-      color: $textColorTwo;
+      color: $colorTwo;
       margin-bottom: 15px;
     }
     input {
@@ -106,12 +105,13 @@
   height: 100vh;
   font-family: $textFont;
   position: relative;
-
   h1 {
     font-size: 2rem;
     text-align: center;
     padding-top: 40px;
     color: $textColorTwo;
+    letter-spacing: 2px;
+    text-transform: uppercase;
   }
 }
 
@@ -131,20 +131,25 @@
 
 .who-text {
   width: 600px;
-  height: 600px;
-  background-color: $textColorTwo;
+  height: 650px;
+  background-color: transparent;
   text-align: left;
-  padding: 30px;
+  padding: 25px;
   font-family: $textFont;
-  h2 {
-    text-align: center;
-  }
+  border: 1px solid $textColorTwo;
   h3 {
-    color: $colorSeven;
+    color: $textColorOne;
+    text-transform: uppercase;
+    padding: 5px 0;
+    letter-spacing: 2px;
+    text-align: left;
+    font-weight: bold;
   }
   p {
     font-size: 1rem;
-    color: $textColorOne;
+    color: $textColorTwo;
+    letter-spacing: 1px;
+    font-weight: bold;
   }
 }
 
@@ -158,6 +163,8 @@
     font-size: 2rem;
     text-align: center;
     padding-top: 40px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
   }
 }
 .services-bg {

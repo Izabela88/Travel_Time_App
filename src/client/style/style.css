@@ -180,7 +180,7 @@
   -webkit-transform: translateY(-50%) translateX(-50%);
           transform: translateY(-50%) translateX(-50%);
   background-color: transparent;
-  border: 3px solid #f7f4f3;
+  border: 1px solid #f7f4f3;
   border-radius: 10px;
   font-family: "Muli", sans-serif;
   opacity: 1;
@@ -190,7 +190,7 @@
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #f7f4f3;
+  color: #f4b886;
   margin-bottom: 15px;
 }
 
@@ -263,6 +263,8 @@
   text-align: center;
   padding-top: 40px;
   color: #f7f4f3;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .about-bg {
@@ -281,24 +283,28 @@
 
 .who-text {
   width: 600px;
-  height: 600px;
-  background-color: #f7f4f3;
+  height: 650px;
+  background-color: transparent;
   text-align: left;
-  padding: 30px;
+  padding: 25px;
   font-family: "Muli", sans-serif;
-}
-
-.who-text h2 {
-  text-align: center;
+  border: 1px solid #f7f4f3;
 }
 
 .who-text h3 {
-  color: #e07015;
+  color: #292929;
+  text-transform: uppercase;
+  padding: 5px 0;
+  letter-spacing: 2px;
+  text-align: left;
+  font-weight: bold;
 }
 
 .who-text p {
   font-size: 1rem;
-  color: #292929;
+  color: #f7f4f3;
+  letter-spacing: 1px;
+  font-weight: bold;
 }
 
 #services-container {
@@ -312,6 +318,8 @@
   font-size: 2rem;
   text-align: center;
   padding-top: 40px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .services-bg {
