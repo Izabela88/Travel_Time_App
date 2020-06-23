@@ -305,26 +305,42 @@
 }
 
 .services-info div:nth-child(1) {
-  margin-left: 30%;
+  margin-left: 40%;
   text-align: right;
 }
 
 .services-info div:nth-child(2) {
-  margin-left: -30%;
+  margin-left: -40%;
   text-align: left;
 }
 
 .services-info div:nth-child(3) {
-  margin-left: 30%;
+  margin-left: 40%;
   text-align: right;
 }
 
 .services-info div:nth-child(4) {
-  margin-left: -30%;
+  margin-left: -40%;
   text-align: left;
 }
 
 .services-box {
   width: 300px;
+  padding: 10px;
+  border: 1px solid #ded2ce;
+  border-radius: 10px;
+}
+
+.services-box h3 {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+
+.services-box p {
+  font-size: 0.85rem;
+}
+
+.services-box i {
+  margin-bottom: 10px;
 }
 /*# sourceMappingURL=style.css.map */

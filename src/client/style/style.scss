@@ -154,22 +154,35 @@
   margin-top: 50px;
   max-width: 1200px;
   div:nth-child(1) {
-    margin-left: 30%;
+    margin-left: 40%;
     text-align: right;
   }
   div:nth-child(2) {
-    margin-left: -30%;
+    margin-left: -40%;
     text-align: left;
   }
   div:nth-child(3) {
-    margin-left: 30%;
+    margin-left: 40%;
     text-align: right;
   }
   div:nth-child(4) {
-    margin-left: -30%;
+    margin-left: -40%;
     text-align: left;
   }
 }
 .services-box {
   width: 300px;
+  padding: 10px;
+  border: 1px solid $colorSix;
+  border-radius: 10px;
+  h3 {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+  }
+  p {
+    font-size: 0.85rem;
+  }
+  i {
+    margin-bottom: 10px;
+  }
 }
