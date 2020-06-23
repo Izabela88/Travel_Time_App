@@ -214,15 +214,36 @@
   cursor: pointer;
 }
 
-.who-box {
-  background: url("../../../img/photo-of-man-wearing-eyeglasses-3184611.jpg") center center/cover no-repeat;
+#section-about {
   height: 100vh;
-  padding: 205px 80px;
+  font-family: "Muli", sans-serif;
+  position: relative;
+  color: #f7f4f3;
+}
+
+#section-about h1 {
+  font-size: 2rem;
+  text-align: center;
+  padding-top: 40px;
+}
+
+.about-bg {
+  background: url("../../../img/photo-of-man-wearing-eyeglasses-3184611.jpg") center center/cover no-repeat;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  -webkit-filter: brightness(80%);
+          filter: brightness(80%);
+}
+
+.who-box {
+  margin: 120px;
 }
 
 .who-text {
   width: 600px;
-  height: 450px;
+  height: 600px;
   background-color: #ded2ce;
   text-align: left;
   padding: 30px;
@@ -233,8 +254,13 @@
   text-align: center;
 }
 
+.who-text h3 {
+  color: #e07015;
+}
+
 .who-text p {
-  font-size: 0.85rem;
+  font-size: 1rem;
+  color: #292929;
 }
 
 #services-container {
@@ -247,6 +273,7 @@
 #services-container h1 {
   font-size: 2rem;
   text-align: center;
+  padding-top: 40px;
 }
 
 .services-bg {
@@ -267,27 +294,34 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100%;
+  margin-top: 50px;
   max-width: 1200px;
-  text-align: center;
 }
 
 .services-info div:nth-child(1) {
-  margin-left: 20%;
+  margin-left: 30%;
+  text-align: right;
 }
 
 .services-info div:nth-child(2) {
-  margin-left: -50%;
+  margin-left: -30%;
+  text-align: left;
 }
 
 .services-info div:nth-child(3) {
-  margin-left: 50%;
+  margin-left: 30%;
+  text-align: right;
+}
+
+.services-info div:nth-child(4) {
+  margin-left: -30%;
+  text-align: left;
 }
 
 .services-box {

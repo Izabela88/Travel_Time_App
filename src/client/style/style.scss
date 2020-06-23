@@ -79,16 +79,35 @@
 }
 
 // Section About
-.who-box {
+#section-about {
+  height: 100vh;
+  font-family: $textFont;
+  position: relative;
+  color: $textColorTwo;
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+    padding-top: 40px;
+  }
+}
+
+.about-bg {
   background: url("../../../img/photo-of-man-wearing-eyeglasses-3184611.jpg")
     center center/cover no-repeat;
-  height: 100vh;
-  padding: 205px 80px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  filter: brightness(80%);
+}
+
+.who-box {
+  margin: 120px;
 }
 
 .who-text {
   width: 600px;
-  height: 450px;
+  height: 600px;
   background-color: $colorSix;
   text-align: left;
   padding: 30px;
@@ -96,8 +115,12 @@
   h2 {
     text-align: center;
   }
+  h3 {
+    color: $colorSeven;
+  }
   p {
-    font-size: 0.85rem;
+    font-size: 1rem;
+    color: $textColorOne;
   }
 }
 
@@ -110,6 +133,7 @@
   h1 {
     font-size: 2rem;
     text-align: center;
+    padding-top: 40px;
   }
 }
 .services-bg {
@@ -125,19 +149,25 @@
 .services-info {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  height: 100%;
+  margin-top: 50px;
   max-width: 1200px;
-  text-align: center;
   div:nth-child(1) {
-    margin-left: 20%;
+    margin-left: 30%;
+    text-align: right;
   }
   div:nth-child(2) {
-    margin-left: -50%;
+    margin-left: -30%;
+    text-align: left;
   }
   div:nth-child(3) {
-    margin-left: 50%;
+    margin-left: 30%;
+    text-align: right;
+  }
+  div:nth-child(4) {
+    margin-left: -30%;
+    text-align: left;
   }
 }
 .services-box {
