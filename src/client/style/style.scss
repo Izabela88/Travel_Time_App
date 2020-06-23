@@ -11,7 +11,7 @@
 #front-page {
   background: url("../../../img/cafe-camera-classic-close-up-413960.jpg") center
     center/cover no-repeat;
-  filter: brightness(50%);
+  filter: brightness(90%);
   height: 100vh;
 }
 
@@ -51,14 +51,13 @@
     transform: translateY(-50%) translateX(-50%);
     background-color: transparent;
     border: 1px solid $textColorTwo;
-    border-radius: 10px;
     font-family: $textFont;
-    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.4);
     h2 {
       text-align: center;
       text-transform: uppercase;
       letter-spacing: 2px;
-      color: $colorTwo;
+      color: $textColorTwo;
       margin-bottom: 15px;
     }
     input {
@@ -116,29 +115,29 @@
 }
 
 .about-bg {
-  background: url("../../../img/photo-of-man-wearing-eyeglasses-3184611.jpg")
+  background: url("../../../img/photo-of-woman-wearing-eyeglasses-3184405.jpg")
     center center/cover no-repeat;
   height: 100%;
   width: 100%;
   position: absolute;
   z-index: -1;
-  filter: brightness(80%);
+  filter: brightness(90%);
 }
 
 .who-box {
-  margin: 120px;
+  margin: 100px;
 }
 
 .who-text {
   width: 600px;
   height: 650px;
-  background-color: transparent;
   text-align: left;
   padding: 25px;
   font-family: $textFont;
+  background-color: rgba(0, 0, 0, 0.4);
   border: 1px solid $textColorTwo;
   h3 {
-    color: $textColorOne;
+    color: $colorSeven;
     text-transform: uppercase;
     padding: 5px 0;
     letter-spacing: 2px;
@@ -149,7 +148,6 @@
     font-size: 1rem;
     color: $textColorTwo;
     letter-spacing: 1px;
-    font-weight: bold;
   }
 }
 
@@ -174,7 +172,7 @@
   width: 100%;
   position: absolute;
   z-index: -1;
-  filter: brightness(60%);
+  filter: brightness(80%);
 }
 
 .services-info {
@@ -205,7 +203,7 @@
   width: 300px;
   padding: 10px;
   border: 1px solid $colorSix;
-  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.4);
   h3 {
     font-size: 1.25rem;
     margin-bottom: 8px;
