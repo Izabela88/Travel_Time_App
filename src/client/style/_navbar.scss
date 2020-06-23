@@ -2,26 +2,26 @@
 
 #navbar {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: repeat(2, 1fr);
   position: fixed;
   background-color: transparent;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 15px;
   z-index: 100;
   text-transform: uppercase;
   ul {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
   }
   li {
     list-style: none;
-    padding: 1rem;
-    margin: 0 1rem;
+    padding: 0 2rem;
+    margin: 1rem;
   }
   a {
     text-decoration: none;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     color: $textColorTwo;
     font-family: $textFont;
     &:hover {
@@ -32,5 +32,5 @@
 
 .nav-logo img {
   width: 150px;
-  margin-left: 30px;
+  margin-left: 50px;
 }

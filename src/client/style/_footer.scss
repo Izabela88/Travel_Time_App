@@ -1,4 +1,6 @@
 /* Footer */
+@import "./variables";
+
 #main-footer {
   background: $textColorTwo;
   font-family: $textFont;
@@ -8,9 +10,8 @@
 .footer-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin: auto;
-  max-width: 1100px;
-  grid-gap: 1.5rem;
+  max-width: 1200px;
+  grid-gap: 1rem;
   padding: 2rem;
   justify-content: center;
   text-align: left;
@@ -52,4 +53,14 @@
 
 .footer-subscribe input[type="submit"] {
   width: 100%;
+}
+
+.footer-subscribe {
+  form {
+    a {
+      padding: 8px;
+      background-color: $colorSeven;
+      width: 50px;
+    }
+  }
 }
