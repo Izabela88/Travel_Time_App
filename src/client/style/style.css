@@ -140,8 +140,11 @@
       -ms-flex-direction: column;
           flex-direction: column;
   top: 40vh;
-  left: 30px;
+  left: 0;
   z-index: 101;
+  background-color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+  padding: 10px;
 }
 
 .social-box a {
