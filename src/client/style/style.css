@@ -158,7 +158,7 @@
   position: relative;
 }
 
-.travel-box {
+.travel-box form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -173,43 +173,81 @@
       -ms-flex-align: center;
           align-items: center;
   position: absolute;
-  height: 350px;
+  height: 380px;
   width: 500px;
   top: -50vh;
   left: 50vw;
   -webkit-transform: translateY(-50%) translateX(-50%);
           transform: translateY(-50%) translateX(-50%);
   background-color: transparent;
-  -webkit-box-shadow: 4px 2px 17px 3px #e07015;
-          box-shadow: 4px 2px 17px 3px #e07015;
+  border: 3px solid #f7f4f3;
+  border-radius: 10px;
   font-family: "Muli", sans-serif;
-  opacity: 0.9;
+  opacity: 1;
 }
 
-.travel-box h2 {
+.travel-box form h2 {
   text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   color: #f7f4f3;
+  margin-bottom: 15px;
 }
 
-.travel-box input {
+.travel-box form input {
   width: 60%;
   margin: 10px 0 10px;
   height: 40px;
   border: 1px solid #f7f4f3;
+  padding-left: 5px;
+  text-transform: uppercase;
   font-family: "Muli", sans-serif;
-  background-color: #f7f4f3;
+  background-color: transparent;
+  color: #f7f4f3;
 }
 
-.travel-box button {
-  width: 200px;
+.travel-box form input::-webkit-input-placeholder {
+  color: #f7f4f3;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
+.travel-box form input:-ms-input-placeholder {
+  color: #f7f4f3;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
+.travel-box form input::-ms-input-placeholder {
+  color: #f7f4f3;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
+.travel-box form input::placeholder {
+  color: #f7f4f3;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
+.travel-box form a {
+  margin-top: 6px;
+  padding-top: 8px;
+  text-align: center;
+  width: 60%;
   height: 40px;
   font-family: "Muli", sans-serif;
+  color: #f7f4f3;
+  letter-spacing: 1px;
   background-color: #e07015;
   font-weight: bold;
   font-size: 1rem;
+  text-decoration: none;
 }
 
-.travel-box button:hover {
+.travel-box form a:hover {
+  -webkit-transition: background-color ease-in-out 0.2s;
+  transition: background-color ease-in-out 0.2s;
   background-color: #f4b886;
   cursor: pointer;
 }

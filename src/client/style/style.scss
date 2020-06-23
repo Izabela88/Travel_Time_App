@@ -38,43 +38,65 @@
 }
 
 .travel-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  height: 350px;
-  width: 500px;
-  top: -50vh;
-  left: 50vw;
-  transform: translateY(-50%) translateX(-50%);
-  background-color: transparent;
-  box-shadow: 4px 2px 17px 3px #e07015;
-  font-family: $textFont;
-  opacity: 0.9;
-  h2 {
-    text-align: center;
-    color: $textColorTwo;
-  }
-  input {
-    width: 60%;
-    margin: 10px 0 10px;
-    height: 40px;
-    border: 1px solid $textColorTwo;
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 380px;
+    width: 500px;
+    top: -50vh;
+    left: 50vw;
+    transform: translateY(-50%) translateX(-50%);
+    background-color: transparent;
+    border: 3px solid $textColorTwo;
+    border-radius: 10px;
+    // box-shadow: 4px 2px 17px 3px #e07015;
     font-family: $textFont;
-    background-color: $textColorTwo;
-  }
+    opacity: 1;
+    h2 {
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: $textColorTwo;
+      margin-bottom: 15px;
+    }
+    input {
+      width: 60%;
+      margin: 10px 0 10px;
+      height: 40px;
+      border: 1px solid $textColorTwo;
+      padding-left: 5px;
+      text-transform: uppercase;
+      font-family: $textFont;
+      background-color: transparent;
+      color: $textColorTwo;
+      &::placeholder {
+        color: $textColorTwo;
+        letter-spacing: 1px;
+        font-weight: 400;
+      }
+    }
 
-  button {
-    width: 200px;
-    height: 40px;
-    font-family: $textFont;
-    background-color: $colorSeven;
-    font-weight: bold;
-    font-size: 1rem;
-    &:hover {
-      background-color: $colorTwo;
-      cursor: pointer;
+    a {
+      margin-top: 6px;
+      padding-top: 8px;
+      text-align: center;
+      width: 60%;
+      height: 40px;
+      font-family: $textFont;
+      color: $textColorTwo;
+      letter-spacing: 1px;
+      background-color: $colorSeven;
+      font-weight: bold;
+      font-size: 1rem;
+      text-decoration: none;
+      &:hover {
+        transition: background-color ease-in-out 0.2s;
+        background-color: $colorTwo;
+        cursor: pointer;
+      }
     }
   }
 }
