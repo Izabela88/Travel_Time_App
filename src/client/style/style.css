@@ -179,30 +179,30 @@
   left: 50vw;
   -webkit-transform: translateY(-50%) translateX(-50%);
           transform: translateY(-50%) translateX(-50%);
-  background-color: #ded2ce;
-  border-radius: 30px;
-  -webkit-box-shadow: 3px 3px 4px 0px #333;
-          box-shadow: 3px 3px 4px 0px #333;
+  background-color: transparent;
+  -webkit-box-shadow: 4px 2px 17px 3px #e07015;
+          box-shadow: 4px 2px 17px 3px #e07015;
   font-family: "Muli", sans-serif;
+  opacity: 0.9;
 }
 
 .travel-box h2 {
   text-align: center;
-  color: #292929;
+  color: #f7f4f3;
 }
 
 .travel-box input {
   width: 60%;
   margin: 10px 0 10px;
   height: 40px;
-  border: 1px solid #e07015;
-  border-radius: 5px;
+  border: 1px solid #f7f4f3;
+  font-family: "Muli", sans-serif;
+  background-color: #f7f4f3;
 }
 
 .travel-box button {
   width: 200px;
   height: 40px;
-  border-radius: 30px;
   font-family: "Muli", sans-serif;
   background-color: #e07015;
   font-weight: bold;
@@ -218,13 +218,13 @@
   height: 100vh;
   font-family: "Muli", sans-serif;
   position: relative;
-  color: #f7f4f3;
 }
 
 #section-about h1 {
   font-size: 2rem;
   text-align: center;
   padding-top: 40px;
+  color: #f7f4f3;
 }
 
 .about-bg {
@@ -244,7 +244,7 @@
 .who-text {
   width: 600px;
   height: 600px;
-  background-color: #ded2ce;
+  background-color: #f7f4f3;
   text-align: left;
   padding: 30px;
   font-family: "Muli", sans-serif;
