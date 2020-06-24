@@ -1,5 +1,15 @@
 /* Footer */
 @import "./variables";
+@mixin container {
+  padding: 0 2rem;
+  max-width: 1200px;
+  margin: auto;
+  align-items: center;
+}
+
+.container {
+  @include container();
+}
 
 #main-footer {
   background: $textColorTwo;
@@ -10,11 +20,9 @@
 .footer-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  max-width: 1200px;
   grid-gap: 1rem;
   padding: 2rem;
   justify-content: center;
-  text-align: left;
   h3 {
     margin-bottom: 1rem;
   }
@@ -27,7 +35,7 @@
     line-height: 2rem;
     color: $textColorOne;
     &:hover {
-      color: $colorThree;
+      color: $colorSeven;
     }
   }
   p {
@@ -39,28 +47,22 @@
 .footer-copyright {
   grid-column: 1 / span 3;
   text-align: center;
-  padding-top: 1rem;
+  padding: 1rem;
   margin-top: 1.5rem;
-  border-top: 1px solid var(--main-salomon);
 }
 
-.footer-subscribe input[type="email"],
-.footer-subscribe input[type="text"] {
-  width: 100%;
-  padding: 0.3rem;
-  margin-bottom: 0.5rem;
-}
-
-.footer-subscribe input[type="submit"] {
-  width: 100%;
-}
-
-.footer-subscribe {
-  form {
-    a {
-      padding: 8px;
-      background-color: $colorSeven;
-      width: 50px;
-    }
+.subscribe-box {
+  display: flex;
+  flex-direction: column;
+  input[type="email"],
+  input[type="text"] {
+    width: 100%;
+    padding: 0.3rem;
+  }
+  a {
+    background-color: $colorTwo;
+    text-align: center;
+    padding: 0.3px;
+    margin-top: 10px;
   }
 }
