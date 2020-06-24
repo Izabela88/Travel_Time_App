@@ -434,7 +434,7 @@
 
 .help-bg {
   background: url("../../../img/cheerful-young-female-secretary-using-on-smartphone-at-4149075.jpg") center center/cover no-repeat;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   position: absolute;
   z-index: -1;
