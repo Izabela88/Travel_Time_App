@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
 #navbar {
   display: -ms-grid;
   display: grid;
@@ -46,7 +49,7 @@
 }
 
 .nav-logo img {
-  width: 150px;
+  width: 170px;
   margin-left: 50px;
 }
 
@@ -79,6 +82,7 @@
 }
 
 .footer-container h3 {
+  font-family: "Varela Round", sans-serif;
   margin-bottom: 1rem;
 }
 
@@ -216,6 +220,7 @@
 }
 
 .travel-box form h2 {
+  font-family: "Varela Round", sans-serif;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -288,6 +293,7 @@
 }
 
 #section-about h1 {
+  font-family: "Varela Round", sans-serif;
   font-size: 2rem;
   text-align: center;
   padding-top: 40px;
@@ -321,6 +327,7 @@
 }
 
 .who-text h3 {
+  font-family: "Varela Round", sans-serif;
   color: #e07015;
   text-transform: uppercase;
   padding: 5px 0;
@@ -343,6 +350,7 @@
 }
 
 #services-container h1 {
+  font-family: "Varela Round", sans-serif;
   font-size: 2rem;
   text-align: center;
   padding-top: 40px;
@@ -405,8 +413,10 @@
 }
 
 .services-box h3 {
+  font-family: "Varela Round", sans-serif;
   font-size: 1.25rem;
   margin-bottom: 8px;
+  letter-spacing: 2px;
 }
 
 .services-box p {
@@ -424,6 +434,7 @@
 }
 
 #section-help h1 {
+  font-family: "Varela Round", sans-serif;
   font-size: 2rem;
   text-align: center;
   padding-top: 40px;
@@ -452,6 +463,7 @@
 }
 
 .help-text h2 {
+  font-family: "Varela Round", sans-serif;
   text-align: center;
   margin-bottom: 10px;
 }
