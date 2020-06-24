@@ -240,14 +240,14 @@
     font-size: 2rem;
     text-align: center;
     padding-top: 40px;
-    color: $textColorTwo;
+    color: $colorSeven;
     letter-spacing: 2px;
     text-transform: uppercase;
   }
 }
 
 .help-bg {
-  background: url("../../../img/white-beads-on-question-mark-sign-3683053.jpg")
+  background: url("../../../img/cheerful-young-female-secretary-using-on-smartphone-at-4149075.jpg")
     center center/cover no-repeat;
   height: 100vh;
   width: 100%;
@@ -256,6 +256,36 @@
 }
 
 .help-text {
-  height: 200px;
-  width: 400px;
+  height: 400px;
+  width: 500px;
+  margin: 100px;
+  background: $bgColor;
+  border: 1px solid $colorSix;
+  color: $textColorTwo;
+  padding: 50px;
+  letter-spacing: 1px;
+  h2 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+}
+
+.help-info {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.help-box {
+  height: 150px;
+  padding-top: 40px;
+  width: 100%;
+  background-color: $colorTwo;
+  letter-spacing: 1px;
+  font-weight: bold;
+  i {
+    font-size: 2rem;
+    padding-bottom: 20px;
+  }
 }
