@@ -4,6 +4,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
 #navbar {
   display: -ms-grid;
   display: grid;
@@ -136,6 +142,201 @@
   text-align: center;
   padding: 0.3px;
   margin-top: 10px;
+}
+
+#navbar {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  position: fixed;
+  background-color: transparent;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 15px;
+  z-index: 100;
+  text-transform: uppercase;
+}
+
+#navbar ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+#navbar li {
+  list-style: none;
+  padding: 0 2rem;
+  margin: 1rem;
+}
+
+#navbar a {
+  text-decoration: none;
+  letter-spacing: 2px;
+  color: #f7f4f3;
+  font-family: "Muli", sans-serif;
+}
+
+#navbar a:hover {
+  color: #e07015;
+}
+
+.nav-logo img {
+  width: 170px;
+  margin-left: 50px;
+}
+
+/* Footer */
+.container {
+  padding: 0 2rem;
+  max-width: 1200px;
+  margin: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#main-footer {
+  background: #f7f4f3;
+  font-family: "Muli", sans-serif;
+  color: #292929;
+}
+
+.footer-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  padding: 2rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.footer-container h3 {
+  font-family: "Varela Round", sans-serif;
+  margin-bottom: 1rem;
+}
+
+.footer-container ul {
+  list-style-type: none;
+}
+
+.footer-container a {
+  text-decoration: none;
+  font-weight: bold;
+  line-height: 2rem;
+  color: #292929;
+}
+
+.footer-container a:hover {
+  color: #e07015;
+}
+
+.footer-container p {
+  font-size: 15px;
+  margin-bottom: 1rem;
+}
+
+.footer-copyright {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1 / span 3;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 1.5rem;
+}
+
+.subscribe-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.subscribe-box input[type="email"],
+.subscribe-box input[type="text"] {
+  width: 100%;
+  padding: 0.3rem;
+}
+
+.subscribe-box a {
+  background-color: #f4b886;
+  text-align: center;
+  padding: 0.3px;
+  margin-top: 10px;
+}
+
+#showcase {
+  background: url("../../../img/4-pineapples-photo-139259.jpg") center center/cover no-repeat;
+  height: 100vh;
+}
+
+#showcase-box {
+  position: relative;
+}
+
+.my-trip {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #ded2ce;
+  position: absolute;
+  height: 600px;
+  width: 100%;
+  top: -50vh;
+  left: 50vw;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+  background-color: transparent;
+  border: 1px solid #f7f4f3;
+  font-family: "Muli", sans-serif;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.trip-img {
+  background-color: #ded2ce;
+  height: 300px;
+  width: 400px;
+  margin-right: 50px;
+}
+
+.trip-box {
+  font-family: "Muli", sans-serif;
+}
+
+.trip-box h3 {
+  font-family: "Varela Round", sans-serif;
+  margin: 30px 10px;
+}
+
+.trip-box a {
+  color: #f7f4f3;
+  text-decoration: none;
+  margin: 40px 10px;
+  background-color: #e07015;
+  padding: 1rem 1rem;
 }
 
 * {

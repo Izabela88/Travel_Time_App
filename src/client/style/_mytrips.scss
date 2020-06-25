@@ -1,0 +1,54 @@
+@import "./navbar";
+@import "./variables";
+@import "./footer";
+
+// Section Showcase
+#showcase {
+  background: url("../../../img/4-pineapples-photo-139259.jpg") center
+    center/cover no-repeat;
+  height: 100vh;
+}
+
+#showcase-box {
+  position: relative;
+}
+
+.my-trip {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: $colorSix;
+  position: absolute;
+  height: 600px;
+  width: 100%;
+  top: -50vh;
+  left: 50vw;
+  transform: translateY(-50%) translateX(-50%);
+  background-color: transparent;
+  border: 1px solid $textColorTwo;
+  font-family: $textFont;
+  background-color: $bgColor;
+}
+
+.trip-img {
+  background-color: $colorSix;
+  height: 300px;
+  width: 400px;
+  margin-right: 50px;
+}
+
+.trip-box {
+  font-family: $textFont;
+  h3 {
+    font-family: $headingFont;
+    margin: 30px 10px;
+  }
+  a {
+    color: $textColorTwo;
+    text-decoration: none;
+    margin: 40px 10px;
+    background-color: $colorSeven;
+    padding: 1rem 1rem;
+  }
+}

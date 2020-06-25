@@ -1,6 +1,7 @@
 @import "./navbar";
 @import "./variables";
 @import "./footer";
+@import "./mytrips";
 
 @mixin container {
   padding: 0 2rem;
@@ -93,7 +94,6 @@
         font-weight: 400;
       }
     }
-
     a {
       margin-top: 6px;
       padding-top: 8px;
