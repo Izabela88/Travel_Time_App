@@ -3,4 +3,4 @@
 
 // console.log(checkForName);
 
-alert("I EXIST")
+import './style/style.scss';
