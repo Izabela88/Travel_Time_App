@@ -13,3 +13,8 @@ const app = express();
 // Cors for cross origin allowance
 const cors = require('cors');
 app.use(cors());
+
+// designates what port the app will listen to for incoming requests
+app.listen(8081, function () {
+  console.log('Server 8081!')
+})
