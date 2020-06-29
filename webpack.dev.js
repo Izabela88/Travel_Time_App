@@ -1,6 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
-const HtmlWebPackPlugin = require("html-webpack-plugin")
+const HtmlWebpackPlugin = require("html-webpack-plugin")
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
@@ -8,7 +8,10 @@ const WorkboxPlugin = require('workbox-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: './src/client/index.js',
+  entry: {
+    index: './src/client/index.js',
+    trips: './src/client/trips.js'
+  },
   mode: 'development',
   devtool: 'source-map',
   stats: 'verbose',
@@ -18,6 +21,9 @@ module.exports = {
   output: {
     libraryTarget: 'var',
     library: 'Client'
+  },
+  devServer: {
+    port: 8080
   },
   module: {
     rules: [
@@ -42,9 +48,17 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebPackPlugin({
+    new HtmlWebpackPlugin({
       template: "./src/client/views/index.html",
+      inject: true,
+      chunks: ['index'],
       filename: "./index.html",
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/client/views/trips.html",
+      inject: true,
+      chunks: ['index'],
+      filename: "./trips.html",
     }),
     new CleanWebpackPlugin({
       // Simulate the removal of files
