@@ -33,14 +33,15 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
       },
       {
-        test: /\.(png|jpe?g|svg)$/,
+        test: /\.(jpe?g|png|gif|svg)$/i,
         use: [{
-          loader: "url-loader",
+          loader: 'url-loader',
           options: {
-            limit: 5000
+            limit: 30000,
+            name: '[name].[ext]'
           }
         }]
-      }
+      },
     ]
   },
   plugins: [
