@@ -6,10 +6,14 @@
   justify-content: space-around;
   min-height: 10vh;
   position: fixed;
-  background-color: transparent;
+  background-color: $colorFive;
   z-index: 100;
   text-transform: uppercase;
   width: 100%;
+  font-weight: bold;
+  top: 0;
+  transition: top 0.3s;
+  box-shadow: 0px 2px 15px 0px #333;
 }
 
 .nav-logo img {
@@ -30,7 +34,7 @@
     color: $textColorTwo;
     font-family: $textFont;
     &:hover {
-      color: $colorSeven;
+      color: $colorTwo;
     }
   }
 }
@@ -62,7 +66,7 @@
     right: 0;
     height: 92vh;
     top: 8vh;
-    background-color: $colorSeven;
+    background-color: $colorFive;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -112,6 +116,9 @@
 #dropbtn {
   padding: 16px;
   cursor: pointer;
+  i {
+    margin-left: 5px;
+  }
 }
 
 #dropdown {
@@ -122,10 +129,15 @@
 .dropdown-content {
   display: none;
   position: absolute;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  width: 170px;
+  height: 125px;
+  text-align: left;
 }
 
 .show {
   display: block;
+  margin-top: 10px;
+  line-height: 50px;
+  padding: 10px;
+  background-color: $colorFive;
 }
