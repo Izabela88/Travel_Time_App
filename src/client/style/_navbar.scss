@@ -107,3 +107,25 @@
   transform: rotate(45deg) translate(-6px, -6px);
   width: 30px;
 }
+
+// Dropdown menu
+#dropbtn {
+  padding: 16px;
+  cursor: pointer;
+}
+
+#dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.show {
+  display: block;
+}
