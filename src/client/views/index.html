@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Travel Time.</title>
   <script src="https://kit.fontawesome.com/583e53361f.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -46,13 +47,14 @@
   <section id="section-travel">
     <div class="container">
       <div class="travel-box">
-        <form action="">
+        <form onsubmit="return Client.performAction(event)">
           <h2>Plan Your Trip</h2>
           <input type="search" id="from-box" placeholder="From:">
-          <input type="search" id="to-box" placeholder="To:">
           <input type="text" id="date-picker" placeholder="Date">
           <input type="text" id="time-picker" placeholder="Time">
-          <a href="#" id="go-btn" type="submit">LETS'S GO!</a>
+          <!-- <a href="trips.html" id="go-btn" type="submit">LETS'S GO!</a> -->
+          <input type="submit" id="go-btn" value="submit" onclick="return Client.performAction(event)"
+            onsubmit="return Client.performAction(event)">
         </form>
       </div>
     </div>
@@ -201,6 +203,8 @@
       </div>
       </section>
   </footer>
+  <script type="text/javascript"
+    src="http://api.geonames.org/postalCodeSearchJSON?placename=raleigh&username=demo"></script>
   <script>
     // Check that service workers are supported
     if ('serviceWorker' in navigator) {
