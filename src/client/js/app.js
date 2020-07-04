@@ -63,10 +63,10 @@ window.onscroll = function () {
   prevScrollpos = currentScrollPos;
 }
 
-// API
 
+// API
 async function performAction(e) {
-  event.preventDefault()
+  event.preventDefault(e)
   try {
     const cityName = document.getElementById("from-box").value;
     const data1 = await getLocalation(geoBaseUrl, cityName, geoUser);
@@ -95,6 +95,7 @@ async function performAction(e) {
       },
       body: JSON.stringify(data),
     });
+    
     await updateUI();
   } catch (e) {
     console.log(e);
@@ -136,9 +137,10 @@ const getImages = async (url, name, subText) => {
 }
 
 const updateUI = async () => {
-  const req = await fetch('http://localhost:8081/addData')
+  const req = await fetch('http://localhost:8081/getData')
   try {
     const data = await req.json();
+    console.log(data);
     document.getElementById('trip-to').innerHTML = 'City: ' + data.name;
     document.getElementById('weather').innerHTML = 'Info: ' + data.description;
   } catch (error) {
@@ -150,5 +152,6 @@ const updateUI = async () => {
 export {
   navSlide,
   dropMenu,
-  performAction
+  performAction,
+  updateUI
 }

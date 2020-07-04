@@ -17,17 +17,21 @@ app.use(cors());
 
 app.use(express.static('dist'))
 
-app.get("/trips", function (req, res) {
-  res.sendFile('dist/trips.html')
-});
+// app.get("/trips", function (req, res) {
+//   res.sendFile('dist/trips.html')
+// });
 
 app.get('/', function (req, res) {
-  res.sendFile('dist/index.html')
+  res.sendFile( __dirname + '../../dist/index.html')
+})
+
+app.get('/trips', function (req, res) {
+  res.sendFile( __dirname + '../../dist/trips.html')
 })
 
 // designates what port the app will listen to for incoming requests
 app.listen(8081, function () {
-  console.log('Server 8081!')
+  console.log('Server 8080!')
 })
 
 app.get('/test', function (req, res) {
@@ -36,10 +40,11 @@ app.get('/test', function (req, res) {
 
 // defining variable using let instead of const
 let projectData = {};
+
 // single GET route to get the projectData
-app.get("/trips", function (req, res) {
-  res.send(projectData);
-});
+app.get('/getData', function (req, res) {
+  res.send(projectData)
+})
 
 // Single POST route to post all data
 app.post("/addData", function (req, res) {
@@ -54,5 +59,6 @@ app.post("/addData", function (req, res) {
   projectData.countryName = country;
   projectData.description = weatherInfo;
   // Sending the success response
-  res.send("sucess");
+  res.redirect('/trips')
+  console.log(projectData)
 });
