@@ -25,9 +25,6 @@ app.post('/', function (req, res) {
   res.redirect('/trips')
 })
 
-// app.get('/trips', function (req, res) {
-//   res.sendFile(__dirname + '../../dist/trips.html')
-// })
 
 // designates what port the app will listen to for incoming requests
 app.listen(8081, function () {

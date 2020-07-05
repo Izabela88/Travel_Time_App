@@ -8,5 +8,6 @@ import { performAction } from './js/app';
 export {
   navSlide,
   dropMenu,
-  performAction
+  performAction,
+
 }

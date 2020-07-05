@@ -14,13 +14,13 @@
 
 // Section Showcase
 #showcase {
-  background: url("../../../img/4-pineapples-photo-139259.jpg") center
-    center/cover no-repeat;
-  height: 100vh;
-}
-
-#showcase-box {
-  position: relative;
+  background-color: $colorTwo;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  height: fit-content;
 }
 
 .my-trip {
@@ -29,12 +29,8 @@
   justify-content: center;
   align-items: center;
   background-color: $colorSix;
-  position: absolute;
   height: 600px;
   width: 100%;
-  top: -50vh;
-  left: 50vw;
-  transform: translateY(-50%) translateX(-50%);
   background-color: transparent;
   border: 1px solid $textColorTwo;
   font-family: $textFont;

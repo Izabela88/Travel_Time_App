@@ -42,27 +42,9 @@
     <a href="https://www.linkedin.com/home" target="_blank"><i class="fab fa-linkedin"></i></a>
   </div>
   <!-- Section Showcase -->
-  <main id="trips-main">
 
-  </main>
   <section id="showcase"></section>
-  <section id="showcase-box">
-    <div class="my-trip">
-      <h2 style="display: none;">You have no trip, please add trip first.</h2>
-      <div class="trip-img"></div>
 
-      <div class="trip-box">
-        <div id="trip-to" class="box">My Trip To:</div>
-        <div id="departing-date" class="box">Departing date:</div>
-        <div id="weather" class="box">Typical Weather For Then Is:</div>
-
-        <div class="btns-box">
-          <a class="save-btn" href="#">Save Trip</a>
-          <a class="remove-btn" href="#">Remove Trip</a>
-        </div>
-      </div>
-    </div>
-  </section>
   <!-- Footer -->
   <footer id="main-footer">
     <div class="container">
@@ -117,15 +99,76 @@
     let i = 0;
     if (trips.length > 0) {
       for (i; i < trips.length; i++) {
+
+        // DOM elements appendChild
+
+        // Add div my-trip
+        let showcaseBox = document.createElement("div");
+        let showcase = document.getElementById("showcase");
+        showcase.appendChild(showcaseBox);
+
+        // Add div class
+        showcaseBox.className = "my-trip";
+
+        // Add h2
+        let h2 = document.createElement("h2");
+        showcaseBox.appendChild(h2);
+
+        // add div trip-img
+        let tripImg = document.createElement("div");
+        showcaseBox.appendChild(tripImg);
+        // Add div class
+        tripImg.className = "trip-img";
+
+        // Add div trip-box
+        let tripBox = document.createElement("div");
+        showcaseBox.appendChild(tripBox);
+        // Add div class
+        tripBox.className = "trip-box";
+
+        // // Add div trip-to
+        let tripTo = document.createElement("div");
+        tripBox.appendChild(tripTo);
+        // // Add div id
+        tripTo.id = "trip-to";
+        tripTo.className = "box";
+
+        // // // Add div departing-date
+        let departingDate = document.createElement("div");
+        tripBox.appendChild(departingDate);
+        // // // Add div id
+        departingDate.id = "departing-date";
+        departingDate.className = "box";
+
+        // // // Add div weather
+        let weather = document.createElement("div");
+        tripBox.appendChild(weather);
+        // // // Add div id
+        weather.id = "weather";
+        weather.className = "box";
+
+        // Add div btns-box
+        let btnsBox = document.createElement("div");
+        tripBox.appendChild(btnsBox);
+        // Add div class
+        btnsBox.className = "btns-box";
+
+        // Add link
+        let removeBtn = document.createElement("a");
+        btnsBox.appendChild(removeBtn);
+        // Add link class
+        removeBtn.className = "remove-btn"
         document.getElementById('trip-to').innerHTML = 'City: ' + trips[i].destination;
         document.getElementById('weather').innerHTML = 'Info: ' + trips[i].weatherInfo;
       }
     } else {
-      const tripHeader = document.querySelector(".my-trip h2");
-      tripHeader.style.display = 'initial';
+      // const tripHeader = document.querySelector(".my-trip h2");
+      // tripHeader.style.display = 'initial';
     }
-  </script>
 
+
+
+  </script>
   <script>
     // Check that service workers are supported
     if ('serviceWorker' in navigator) {
