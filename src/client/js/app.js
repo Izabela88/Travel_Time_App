@@ -11,9 +11,9 @@ const imgUrl = 'https://pixabay.com/api/?key=17257813-2246e0d7e1d1d470c6dfee7fb&
 const subUrl = '&image_type=photo'
 
 // Create a new date instance dynamically with JS
-let d = new Date();
-let newDate = d.getMonth() + '.' + d.getDate() + '.' + d.getFullYear();
-console.log(newDate)
+// let d = new Date();
+// let newDate = d.getMonth() + '.' + d.getDate() + '.' + d.getFullYear();
+
 
 
 // Responsive Navigation Bar
@@ -66,42 +66,48 @@ window.onscroll = function () {
 
 // API
 async function performAction(e) {
-  event.preventDefault(e)
+  event.preventDefault();
   try {
     const cityName = document.getElementById("from-box").value;
     const data1 = await getLocalation(geoBaseUrl, cityName, geoUser);
     const res1 = {
       destination: data1.geonames[0].name,
-      country: data1.geonames[0].countryName,
+      // country: data1.geonames[0].countryName,
     };
     const data2 = await getWeather(weatherUrl, cityName, weatherKey);
     const res2 = {
       weatherInfo: data2.data[0].weather.description,
     };
-    const data3 = await getImages(imgUrl, cityName, subUrl);
-    const res3 = { largeImg: data3.hits[0].largeImageURL };
-    // create a single object to post
+    // const data3 = await getImages(imgUrl, cityName, subUrl);
+    // const res3 = { largeImg: data3.hits[0].largeImageURL };
+    // // create a single object to post
     const data = {
       destination: res1.destination,
-      country: res1.country,
+      // country: res1.country,
       weatherInfo: res2.weatherInfo,
-
     }
-    // posting all the data to the server
-    await fetch("http://localhost:8081/addData", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
-    
-    await updateUI();
+    console.log(data);
+    storeTripInLocalStorage(data);
+    location.replace("http://localhost:8080/trips.html")
   } catch (e) {
     console.log(e);
   }
-
 }
+
+function storeTripInLocalStorage(trip) {
+  console.log("save data");
+  let trips;
+  if (localStorage.getItem("trips") === null) {
+    trips = [];
+  } else {
+    trips = JSON.parse(localStorage.getItem("trips"));
+  }
+
+  trips.push(trip);
+
+  localStorage.setItem("trips", JSON.stringify(trips));
+}
+
 
 const getLocalation = async (url, name, userkey) => {
   const res = await fetch(url + name + userkey)
@@ -125,33 +131,20 @@ const getWeather = async (url, name, userkey) => {
   }
 }
 
-const getImages = async (url, name, subText) => {
-  const res = await fetch(url + name + subText)
-  try {
-    const data = await res.json();
-    console.log(data)
-    return data;
-  } catch (error) {
-    console.log(error)
-  }
-}
-
-const updateUI = async () => {
-  const req = await fetch('http://localhost:8081/getData')
-  try {
-    const data = await req.json();
-    console.log(data);
-    document.getElementById('trip-to').innerHTML = 'City: ' + data.name;
-    document.getElementById('weather').innerHTML = 'Info: ' + data.description;
-  } catch (error) {
-    console.log('Error', error)
-  }
-}
+// const getImages = async (url, name, subText) => {
+//   const res = await fetch(url + name + subText)
+//   try {
+//     const data = await res.json();
+//     console.log(data)
+//     return data;
+//   } catch (error) {
+//     console.log(error)
+//   }
+// }
 
 
 export {
   navSlide,
   dropMenu,
   performAction,
-  updateUI
 }

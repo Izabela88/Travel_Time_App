@@ -17,48 +17,23 @@ app.use(cors());
 
 app.use(express.static('dist'))
 
-// app.get("/trips", function (req, res) {
-//   res.sendFile('dist/trips.html')
-// });
 
 app.get('/', function (req, res) {
-  res.sendFile( __dirname + '../../dist/index.html')
+  res.sendFile(__dirname + '../../dist/index.html')
+})
+app.post('/', function (req, res) {
+  res.redirect('/trips')
 })
 
-app.get('/trips', function (req, res) {
-  res.sendFile( __dirname + '../../dist/trips.html')
-})
+// app.get('/trips', function (req, res) {
+//   res.sendFile(__dirname + '../../dist/trips.html')
+// })
 
 // designates what port the app will listen to for incoming requests
 app.listen(8081, function () {
-  console.log('Server 8080!')
+  console.log('Server 8081!')
 })
 
 app.get('/test', function (req, res) {
   res.send(mockAPIResponse)
 })
-
-// defining variable using let instead of const
-let projectData = {};
-
-// single GET route to get the projectData
-app.get('/getData', function (req, res) {
-  res.send(projectData)
-})
-
-// Single POST route to post all data
-app.post("/addData", function (req, res) {
-  // Destructuring values from request body
-  const {
-    destination,
-    country,
-    weatherInfo,
-  } = req.body;
-  // Updating projectData variable
-  projectData.name = destination;
-  projectData.countryName = country;
-  projectData.description = weatherInfo;
-  // Sending the success response
-  res.redirect('/trips')
-  console.log(projectData)
-});
