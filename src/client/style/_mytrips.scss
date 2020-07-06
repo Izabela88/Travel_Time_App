@@ -4,7 +4,7 @@
 
 @mixin box {
   width: 400px;
-  height: 100px;
+  height: 50px;
   padding: 15px;
 }
 
@@ -20,7 +20,41 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  height: fit-content;
+  height: auto;
+  padding-top: 160px;
+  padding-bottom: 20px;
+
+  .info-box {
+    height: 340px;
+    width: 510px;
+    text-align: center;
+    padding: 30px;
+    background-color: $bgColor;
+    display: none;
+  }
+  h2 {
+    font-family: $headingFont;
+    font-size: 1.5rem;
+    line-height: 50px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding-bottom: 60px;
+  }
+}
+
+.back-btn {
+  background-color: $colorTwo;
+  padding: 20px;
+  width: 140px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-family: $headingFont;
+  color: $textColorOne;
+  &:hover {
+    background-color: $colorSeven;
+  }
 }
 
 .my-trip {
@@ -29,19 +63,22 @@
   justify-content: center;
   align-items: center;
   background-color: $colorSix;
-  height: 600px;
-  width: 100%;
+  width: 88%;
   background-color: transparent;
   border: 1px solid $textColorTwo;
   font-family: $textFont;
   background-color: $bgColor;
+  padding: 40px;
+  margin-bottom: 20px;
 }
 
 .trip-img {
-  background-color: $colorSix;
   height: 300px;
   width: 400px;
   margin-right: 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .trip-box {
@@ -54,25 +91,26 @@
   align-items: flex-start;
 }
 
-.btns-box {
+.btn-box {
   height: 100px;
   width: 400px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  a {
-    color: $textColorTwo;
-    text-decoration: none;
-    margin: 40px 10px;
-    background-color: $colorSeven;
-    padding: 1rem 1rem;
-  }
 }
 
-#trip-to {
-}
-#departing {
-}
-#weather {
+.remove-btn {
+  color: $textColorOne;
+  text-decoration: none;
+  margin: 40px 10px;
+  background-color: $colorSeven;
+  padding: 1rem 1rem;
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  &:hover {
+    background-color: $colorTwo;
+    cursor: pointer;
+  }
 }

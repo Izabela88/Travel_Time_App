@@ -69,24 +69,27 @@ window.onscroll = function () {
 // API
 async function performAction(e) {
   event.preventDefault();
+  const cityName = document.getElementById("from-box").value;
   try {
-    const cityName = document.getElementById("from-box").value;
     const data1 = await getLocalation(geoBaseUrl, cityName, geoUser);
     const res1 = {
       destination: data1.geonames[0].name,
-      // country: data1.geonames[0].countryName,
+      country: data1.geonames[0].countryName,
     };
     const data2 = await getWeather(weatherUrl, cityName, weatherKey);
     const res2 = {
+      temperature: data2.data[0].temp,
       weatherInfo: data2.data[0].weather.description,
     };
-    // const data3 = await getImages(imgUrl, cityName, subUrl);
-    // const res3 = { largeImg: data3.hits[0].largeImageURL };
+    const data3 = await getImages(imgUrl, cityName, subUrl);
+    const res3 = { largeImg: data3.hits[0].largeImageURL };
     // // create a single object to post
     const data = {
       destination: res1.destination,
-      // country: res1.country,
+      country: res1.country,
+      temperature: res2.temperature,
       weatherInfo: res2.weatherInfo,
+      largeImg: res3.largeImg
     }
     console.log(data);
     storeTripInLocalStorage(data);
@@ -133,16 +136,16 @@ const getWeather = async (url, name, userkey) => {
   }
 }
 
-// const getImages = async (url, name, subText) => {
-//   const res = await fetch(url + name + subText)
-//   try {
-//     const data = await res.json();
-//     console.log(data)
-//     return data;
-//   } catch (error) {
-//     console.log(error)
-//   }
-// }
+const getImages = async (url, name, subText) => {
+  const res = await fetch(url + name + subText)
+  try {
+    const data = await res.json();
+    console.log(data)
+    return data;
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 
 export {

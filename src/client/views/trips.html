@@ -6,14 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Travel Time.</title>
   <script src="https://kit.fontawesome.com/583e53361f.js" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="../../../dist/main.js"></script>
+  <!-- <script type="text/javascript" src="../../../dist/main.js"></script> -->
 </head>
 
 <body>
   <!-- Navbar -->
   <nav id="navbar">
     <div class="nav-logo">
-      <img src="../../../img/travel_logo_white_2.png" alt="travel-logo">
+      <a href="index.html"><img src="../../../img/travel_logo_white_2.png" alt="travel-logo"></a>
     </div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
@@ -43,7 +43,12 @@
   </div>
   <!-- Section Showcase -->
 
-  <section id="showcase"></section>
+  <section id="showcase">
+    <div class="info-box">
+      <h2>You have no trips! Please go back to home page and fill in the form!</h2>
+      <a class="back-btn" href="index.html">Home</a>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer id="main-footer">
@@ -96,77 +101,95 @@
       trips = JSON.parse(localStorage.getItem("trips"));
     }
     console.log(trips);
-    let i = 0;
-    if (trips.length > 0) {
-      for (i; i < trips.length; i++) {
 
-        // DOM elements appendChild
 
-        // Add div my-trip
-        let showcaseBox = document.createElement("div");
-        let showcase = document.getElementById("showcase");
-        showcase.appendChild(showcaseBox);
+    createTravelCard(trips);
 
-        // Add div class
-        showcaseBox.className = "my-trip";
+    function createTravelCard(trips) {
+      let i = 0;
+      if (trips.length > 0) {
+        for (i; i < trips.length; i++) {
+          // DOM elements appendChild
+          // Add div my-trip
+          let showcaseBox = document.createElement("div");
+          let showcase = document.getElementById("showcase");
+          showcase.appendChild(showcaseBox);
 
-        // Add h2
-        let h2 = document.createElement("h2");
-        showcaseBox.appendChild(h2);
+          // Add div class
+          showcaseBox.className = "my-trip";
 
-        // add div trip-img
-        let tripImg = document.createElement("div");
-        showcaseBox.appendChild(tripImg);
-        // Add div class
-        tripImg.className = "trip-img";
+          // add div trip-img
+          let tripImg = document.createElement("div");
+          showcaseBox.appendChild(tripImg);
+          // Add div class
+          tripImg.className = "trip-img";
 
-        // Add div trip-box
-        let tripBox = document.createElement("div");
-        showcaseBox.appendChild(tripBox);
-        // Add div class
-        tripBox.className = "trip-box";
+          // Add div trip-box
+          let tripBox = document.createElement("div");
+          showcaseBox.appendChild(tripBox);
+          // Add div class
+          tripBox.className = "trip-box";
 
-        // // Add div trip-to
-        let tripTo = document.createElement("div");
-        tripBox.appendChild(tripTo);
-        // // Add div id
-        tripTo.id = "trip-to";
-        tripTo.className = "box";
+          // // Add div trip-to
+          let tripTo = document.createElement("div");
+          tripBox.appendChild(tripTo);
+          // // Add div class
+          tripTo.className = "trip-to box";
 
-        // // // Add div departing-date
-        let departingDate = document.createElement("div");
-        tripBox.appendChild(departingDate);
-        // // // Add div id
-        departingDate.id = "departing-date";
-        departingDate.className = "box";
+          // // Add div country
+          let country = document.createElement("div");
+          tripBox.appendChild(country);
+          // // Add div class
+          country.className = "country box";
 
-        // // // Add div weather
-        let weather = document.createElement("div");
-        tripBox.appendChild(weather);
-        // // // Add div id
-        weather.id = "weather";
-        weather.className = "box";
+          // // // Add div departing-date
+          let departingDate = document.createElement("div");
+          tripBox.appendChild(departingDate);
+          // // // Add div class
+          departingDate.className = "departing-date box";
 
-        // Add div btns-box
-        let btnsBox = document.createElement("div");
-        tripBox.appendChild(btnsBox);
-        // Add div class
-        btnsBox.className = "btns-box";
+          // // // Add div weather
+          let weather = document.createElement("div");
+          tripBox.appendChild(weather);
+          // // // Add div class
+          weather.className = "weather box";
 
-        // Add link
-        let removeBtn = document.createElement("a");
-        btnsBox.appendChild(removeBtn);
-        // Add link class
-        removeBtn.className = "remove-btn"
-        document.getElementById('trip-to').innerHTML = 'City: ' + trips[i].destination;
-        document.getElementById('weather').innerHTML = 'Info: ' + trips[i].weatherInfo;
+          // // // Add div temperature
+          let temp = document.createElement("div");
+          tripBox.appendChild(temp);
+          // // // Add div class
+          temp.className = "temp box";
+
+          // Add div btns-box
+          let btnBox = document.createElement("div");
+          tripBox.appendChild(btnBox);
+          // Add div class
+          btnBox.className = "btn-box";
+
+          // Add link
+          let removeBtn = document.createElement("a");
+          removeBtn.innerHTML = "Remove Trip";
+          btnBox.appendChild(removeBtn);
+          // Add link class
+          removeBtn.className = "remove-btn"
+          // Update UI
+          const destinationElements = document.querySelectorAll('.trip-to');
+          destinationElements[i].innerHTML = 'City: ' + trips[i].destination;
+          const countryElements = document.querySelectorAll('.country');
+          countryElements[i].innerHTML = 'Country: ' + trips[i].country;
+          const tempElements = document.querySelectorAll('.temp');
+          tempElements[i].innerHTML = 'Temperature: ' + trips[i].temperature;
+          const weatherElements = document.querySelectorAll('.weather');
+          weatherElements[i].innerHTML = 'Weather Info: ' + trips[i].weatherInfo;
+          const imgElements = document.querySelectorAll('.trip-img');
+          imgElements[i].style.backgroundImage = `url(${trips[i].largeImg})`;
+        }
+      } else {
+        const infoBox = document.querySelector(".info-box");
+        infoBox.style.display = 'initial';
       }
-    } else {
-      // const tripHeader = document.querySelector(".my-trip h2");
-      // tripHeader.style.display = 'initial';
+
     }
-
-
 
   </script>
   <script>
