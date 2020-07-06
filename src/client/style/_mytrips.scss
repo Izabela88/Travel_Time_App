@@ -23,6 +23,16 @@
   height: auto;
   padding-top: 160px;
   padding-bottom: 20px;
+}
+
+.add-trip {
+  position: fixed;
+  z-index: 200;
+  bottom: 10vh;
+  right: 10vh;
+  background-color: beige;
+  padding: 20px;
+  width: 150px;
 
   .info-box {
     height: 340px;
@@ -49,7 +59,6 @@
   text-align: center;
   text-decoration: none;
   font-size: 1.5rem;
-  text-transform: uppercase;
   font-family: $headingFont;
   color: $textColorOne;
   &:hover {

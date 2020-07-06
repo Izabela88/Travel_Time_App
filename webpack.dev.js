@@ -58,7 +58,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/client/views/trips.html",
       inject: true,
-      chunks: ['index'],
+      chunks: ['trips'],
       filename: "./trips.html",
     }),
     new CleanWebpackPlugin({
