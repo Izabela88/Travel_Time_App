@@ -16,6 +16,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .container {
   @include container();
 }
@@ -248,7 +252,7 @@
 
 .help-text {
   height: 400px;
-  width: 500px;
+  width: 640px;
   margin: 100px;
   background: $bgColor;
   border: 1px solid $colorSix;

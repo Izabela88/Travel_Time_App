@@ -92,9 +92,9 @@ function createTravelCard(trips) {
   }
 }
 
-// const clearBtn = document.querySelector(".clear-trip");
+const clearBtn = document.querySelector(".clear-trip");
 // // Clear trips event
-// clearBtn.addEventListener("click", clearTrip);
+clearBtn.addEventListener("click", clearTrip);
 
 // Remove trip event
 const tripList = document.querySelectorAll(".remove-trip-btn");

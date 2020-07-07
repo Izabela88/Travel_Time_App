@@ -1,16 +1,3 @@
-//Geonames
-const geoBaseUrl = 'http://api.geonames.org/searchJSON?q=';
-const geoUser = '&username=izz88';
-
-//Weatherbit
-const weatherUrl = 'https://api.weatherbit.io/v2.0/forecast/daily?city=';
-const weatherKey = '&key=ca8ad9afa1224805a512cb293128295a'
-
-//Pixabay
-const imgUrl = 'https://pixabay.com/api/?key=17257813-2246e0d7e1d1d470c6dfee7fb&q='
-const subUrl = '&image_type=photo'
-
-
 // Responsive Navigation Bar
 const navSlide = () => {
   const burger = document.querySelector('.burger');
@@ -58,7 +45,38 @@ window.onscroll = function () {
   prevScrollpos = currentScrollPos;
 }
 
+// Scroll to section 
+const navbarLinks = document.querySelectorAll("#navbar a");
+
+navbarLinks.forEach(elem => elem.addEventListener("click", navbarLinkClick));
+
+function navbarLinkClick(event) {
+  smoothScroll(event);
+}
+
+// Smooth scrolling
+function smoothScroll(event) {
+  event.preventDefault(e);
+  const targetId = event.currentTarget.getAttribute("href");
+  window.scrollTo({
+    top: document.querySelector(targetId).offsetTop,
+    behavior: "smooth"
+  });
+}
+
 // API
+//Geonames
+const geoBaseUrl = 'http://api.geonames.org/searchJSON?q=';
+const geoUser = '&username=izz88';
+
+//Weatherbit
+const weatherUrl = 'https://api.weatherbit.io/v2.0/forecast/daily?city=';
+const weatherKey = '&key=ca8ad9afa1224805a512cb293128295a'
+
+//Pixabay
+const imgUrl = 'https://pixabay.com/api/?key=17257813-2246e0d7e1d1d470c6dfee7fb&q='
+const subUrl = '&image_type=photo'
+
 async function performAction(e) {
   event.preventDefault();
   const cityName = document.getElementById("from-box").value;
