@@ -25,7 +25,7 @@ function createTravelCard(trips) {
       // DOM elements appendChild
       // Add div my-trip
       let showcaseBox = document.createElement("div");
-      let showcase = document.getElementById("showcase  collection");
+      let showcase = document.getElementById("showcase");
       showcase.appendChild(showcaseBox);
       // Add div class
       showcaseBox.className = "my-trip";
@@ -74,7 +74,7 @@ function createTravelCard(trips) {
       removeBtn.innerHTML = "Remove Trip";
       btnBox.appendChild(removeBtn);
       // Add link class
-      removeBtn.className = "remove-btn  delete-item clear-tasks"
+      removeBtn.className = "remove-trip-btn  clear-trip"
       // Update UI
       const destinationElements = document.querySelectorAll('.trip-to');
       destinationElements[i].innerHTML = 'City: ' + trips[i].destination;
@@ -93,57 +93,60 @@ function createTravelCard(trips) {
   }
 }
 
-const taskList = document.querySelector(".collection");
-const clearBtn = document.querySelector(".clear-tasks");
+// const clearBtn = document.querySelector(".clear-trip");
+// // Clear trips event
+// clearBtn.addEventListener("click", clearTrip);
 
-// Remove taks event
-taskList.addEventListener("click", removeTask);
-// Clear task event
-clearBtn.addEventListener("click", clearTasks);
 
-// Remove Task
-function removeTask(e) {
-  if (e.target.parentElement.classList.contains("delete-item")) {
-    if (confirm("Are You Sure?")) {
-      e.target.parentElement.parentElement.remove();
+// Remove trip event
+const tripList = document.querySelectorAll(".remove-trip-btn");
 
-      // Remove from LS
-      removeTaskFromLocalStorage(e.target.parentElement.parentElement.parentElement);
-    }
+tripList.forEach(tripBtn => {
+  tripBtn.addEventListener("click", removeTrip);
+
+});
+
+
+// Remove Trip
+function removeTrip(e) {
+  if (confirm("Are You Sure?")) {
+    e.target.parentElement.parentElement.parentElement.remove();
+    // Remove from LS
+    removeTripFromLocalStorage(e.target.parentElement.parentElement.parentElement);
   }
 }
 console.log()
 
 // Function from LS
-function removeTaskFromLocalStorage(taskItem) {
-  let tasks;
+function removeTripFromLocalStorage(tripItem) {
+  let trips;
   if (localStorage.getItem("trips") === null) {
     trips = [];
   } else {
     trips = JSON.parse(localStorage.getItem("trips"));
   }
 
-  trips.forEach(function (task, index) {
-    if (taskItem.textContent === task) {
+  trips.forEach(function (trips, index) {
+    if (tripItem.textContent === trips) {
       trips.splice(index, 1);
     }
   });
   localStorage.setItem("trips", JSON.stringify(trips));
 }
 
-// Cear Tasks
-function clearTasks() {
-  taskList.innerHTML = '';
+// Clear Trip
+function clearTrip() {
+  tripList.innerHTML = '';
 
-  while (taskList.firstChild) {
-    taskList.removeChild(taskList.firstChild);
+  while (tripList.firstChild) {
+    tripList.removeChild(tripList.firstChild);
   }
 
-  // Clear from Localc Storage
-  clearTasksFromLocalStorage();
+  // Clear from Local Storage
+  clearTripFromLocalStorage();
 }
 
-// Clear Tasks From Local Storage
-function clearTasksFromLocalStorage() {
+// Clear Trip From Local Storage
+function clearTripFromLocalStorage() {
   localStorage.clear();
 }
