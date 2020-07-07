@@ -163,12 +163,9 @@ const getImages = async (url, name, subText) => {
 
 
 
-
-
-
-
 export {
   navSlide,
   dropMenu,
   performAction,
+  navbarLinkClick
 }

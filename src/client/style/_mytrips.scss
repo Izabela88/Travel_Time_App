@@ -77,16 +77,49 @@ h2 {
 }
 
 .back-btn {
-  background-color: $colorTwo;
-  padding: 20px;
-  width: 140px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 1.5rem;
-  font-family: $headingFont;
-  color: $textColorOne;
-  &:hover {
-    background-color: $colorSeven;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  a {
+    display: block;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: $textColorOne;
+    border: 1px solid $textColorTwo;
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    transition: all 0.35s;
+    margin-top: 320px;
+  }
+  a span {
+    position: relative;
+    z-index: 2;
+  }
+
+  a:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: $colorSeven;
+    transition: all 0.35s;
+  }
+
+  a:hover {
+    color: #fff;
+    border: 1px solid $colorSeven;
+  }
+
+  a:hover:after {
+    width: 100%;
   }
 }
 
@@ -122,6 +155,8 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .btn-box {
