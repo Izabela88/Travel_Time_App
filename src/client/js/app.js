@@ -1,5 +1,3 @@
-
-
 //Geonames
 const geoBaseUrl = 'http://api.geonames.org/searchJSON?q=';
 const geoUser = '&username=izz88';
@@ -11,11 +9,6 @@ const weatherKey = '&key=ca8ad9afa1224805a512cb293128295a'
 //Pixabay
 const imgUrl = 'https://pixabay.com/api/?key=17257813-2246e0d7e1d1d470c6dfee7fb&q='
 const subUrl = '&image_type=photo'
-
-// Create a new date instance dynamically with JS
-// let d = new Date();
-// let newDate = d.getMonth() + '.' + d.getDate() + '.' + d.getFullYear();
-
 
 
 // Responsive Navigation Bar
@@ -65,31 +58,33 @@ window.onscroll = function () {
   prevScrollpos = currentScrollPos;
 }
 
-
 // API
 async function performAction(e) {
   event.preventDefault();
   const cityName = document.getElementById("from-box").value;
+  let newDate = document.getElementById("date-picker").value;
   try {
-    const data1 = await getLocalation(geoBaseUrl, cityName, geoUser);
+    const dataLocation = await getLocalation(geoBaseUrl, cityName, geoUser);
     const res1 = {
-      destination: data1.geonames[0].name,
-      country: data1.geonames[0].countryName,
+      destination: dataLocation.geonames[0].name,
+      country: dataLocation.geonames[0].countryName,
     };
-    const data2 = await getWeather(weatherUrl, cityName, weatherKey);
+    const dataWeather = await getWeather(weatherUrl, cityName, weatherKey);
     const res2 = {
-      temperature: data2.data[0].temp,
-      weatherInfo: data2.data[0].weather.description,
+      temperature: dataWeather.data[0].temp,
+      weatherInfo: dataWeather.data[0].weather.description,
     };
-    const data3 = await getImages(imgUrl, cityName, subUrl);
-    const res3 = { largeImg: data3.hits[0].largeImageURL };
-    // // create a single object to post
+    const dataImages = await getImages(imgUrl, cityName, subUrl);
+    const res3 = { largeImg: dataImages.hits[0].largeImageURL };
+
+    // // Create a single object to post
     const data = {
       destination: res1.destination,
       country: res1.country,
       temperature: res2.temperature,
       weatherInfo: res2.weatherInfo,
-      largeImg: res3.largeImg
+      largeImg: res3.largeImg,
+      date: newDate
     }
     console.log(data);
     storeTripInLocalStorage(data);
@@ -99,6 +94,7 @@ async function performAction(e) {
   }
 }
 
+// // Store data in Local Storage
 function storeTripInLocalStorage(trip) {
   console.log("save data");
   let trips;
@@ -113,7 +109,7 @@ function storeTripInLocalStorage(trip) {
   localStorage.setItem("trips", JSON.stringify(trips));
 }
 
-
+// Get data using API
 const getLocalation = async (url, name, userkey) => {
   const res = await fetch(url + name + userkey)
   try {
@@ -146,6 +142,11 @@ const getImages = async (url, name, subText) => {
     console.log(error)
   }
 }
+
+
+
+
+
 
 
 export {

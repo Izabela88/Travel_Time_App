@@ -1,6 +1,3 @@
-
-
-
 // Store data
 const myTrips = () => {
   let trips;
@@ -15,7 +12,7 @@ const myTrips = () => {
 
 trips = myTrips();
 
-// Create travel card in trips.html
+// Create dynamically travel card in trips.html
 createTravelCard(trips);
 
 function createTravelCard(trips) {
@@ -86,6 +83,8 @@ function createTravelCard(trips) {
       weatherElements[i].innerHTML = 'Weather Info: ' + trips[i].weatherInfo;
       const imgElements = document.querySelectorAll('.trip-img');
       imgElements[i].style.backgroundImage = `url(${trips[i].largeImg})`;
+      const dateElements = document.querySelectorAll('.departing-date');
+      dateElements[i].innerHTML = 'Departing Date: ' + trips[i].date;
     }
   } else {
     const infoBox = document.querySelector(".info-box");
@@ -97,7 +96,6 @@ function createTravelCard(trips) {
 // // Clear trips event
 // clearBtn.addEventListener("click", clearTrip);
 
-
 // Remove trip event
 const tripList = document.querySelectorAll(".remove-trip-btn");
 
@@ -105,7 +103,6 @@ tripList.forEach(tripBtn => {
   tripBtn.addEventListener("click", removeTrip);
 
 });
-
 
 // Remove Trip
 function removeTrip(e) {
@@ -150,3 +147,5 @@ function clearTrip() {
 function clearTripFromLocalStorage() {
   localStorage.clear();
 }
+
+
