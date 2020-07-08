@@ -22,16 +22,6 @@ const navSlide = () => {
 }
 navSlide();
 
-// Dropdown About Menu
-const dropMenu = () => {
-  const content = document.querySelector('.dropdown-content');
-  const drop = document.querySelector('#dropdown');
-  drop.addEventListener('click', () => {
-    content.classList.toggle('show');
-  })
-}
-
-dropMenu();
 
 // When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar 
 var prevScrollpos = window.pageYOffset;
@@ -175,7 +165,6 @@ const getImages = async (url, name, subText) => {
 
 export {
   navSlide,
-  dropMenu,
   performAction,
-  navbarLinkClick
+  navbarLinkClick,
 }
