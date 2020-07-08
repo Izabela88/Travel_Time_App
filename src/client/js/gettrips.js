@@ -5,6 +5,8 @@ const myTrips = () => {
     trips = [];
   } else {
     trips = JSON.parse(localStorage.getItem("trips"));
+    // New trips will be display as first on top of the page in My Trips section
+    trips = trips.reverse();
   }
   console.log(trips);
   return trips;
