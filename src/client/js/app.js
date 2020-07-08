@@ -64,6 +64,16 @@ function smoothScroll(event) {
   });
 }
 
+// Scroll to top button
+const backToTopButton = document.querySelector("#back-to-top-btn");
+
+backToTopButton.addEventListener("click", backToTop);
+
+function backToTop() {
+  window.scroll(0, 0);
+}
+
+
 // API
 //Geonames
 const geoBaseUrl = 'http://api.geonames.org/searchJSON?q=';

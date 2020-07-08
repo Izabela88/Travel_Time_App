@@ -67,3 +67,20 @@
     margin-top: 10px;
   }
 }
+
+#back-to-top-btn {
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  font-size: 25px;
+  width: 45px;
+  height: 45px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  outline: none;
+  border: 3px solid #333;
+  border-radius: 50%;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
