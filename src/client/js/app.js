@@ -22,7 +22,6 @@ const navSlide = () => {
 }
 navSlide();
 
-
 // When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar 
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function () {
@@ -54,7 +53,7 @@ function smoothScroll(event) {
   });
 }
 
-// Scroll to top button
+// 'Scroll to top' button
 const backToTopButton = document.querySelector("#back-to-top-btn");
 
 backToTopButton.addEventListener("click", backToTop);
@@ -62,7 +61,6 @@ backToTopButton.addEventListener("click", backToTop);
 function backToTop() {
   window.scroll(0, 0);
 }
-
 
 // API
 //Geonames
@@ -95,7 +93,7 @@ async function performAction(e) {
     const dataImages = await getImages(imgUrl, cityName, subUrl);
     const res3 = { largeImg: dataImages.hits[0].largeImageURL };
 
-    // // Create a single object to post
+    // Create a single object to post
     const data = {
       destination: res1.destination,
       country: res1.country,
@@ -112,7 +110,7 @@ async function performAction(e) {
   }
 }
 
-// // Store data in Local Storage
+// Store data in Local Storage
 function storeTripInLocalStorage(trip) {
   console.log("save data");
   let trips;
@@ -160,8 +158,6 @@ const getImages = async (url, name, subText) => {
     console.log(error)
   }
 }
-
-
 
 export {
   navSlide,

@@ -5,9 +5,15 @@
 
 @mixin container {
   padding: 0 2rem;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: auto;
   align-items: center;
+}
+
+@mixin footer-div {
+  border-bottom: 1px dotted orange;
+  padding: 10px;
+  width: 100%;
 }
 
 * {
@@ -56,50 +62,50 @@ html {
 // Section Travel
 #section-travel {
   position: relative;
-}
 
-.travel-box {
-  form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    height: 470px;
-    width: 500px;
-    top: -50vh;
-    left: 50vw;
-    transform: translateY(-50%) translateX(-50%);
-    background-color: transparent;
-    border: 1px solid $textColorTwo;
-    font-family: $textFont;
-    background-color: $bgColor;
-    h2 {
-      font-family: $headingFont;
-      text-align: center;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: $textColorTwo;
-      padding-bottom: 20px;
-    }
-    input {
-      width: 60%;
-      margin: 10px 0 10px;
-      height: 40px;
-      border: 1px solid $textColorTwo;
-      padding-left: 5px;
-      text-transform: uppercase;
-      font-family: $textFont;
+  .travel-box {
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      height: 470px;
+      width: 500px;
+      top: -50vh;
+      left: 50vw;
+      transform: translateY(-50%) translateX(-50%);
       background-color: transparent;
-      color: $textColorTwo;
-      cursor: pointer;
-      &::placeholder {
+      border: 1px solid $textColorTwo;
+      font-family: $textFont;
+      background-color: $bgColor;
+      h2 {
+        font-family: $headingFont;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 2px;
         color: $textColorTwo;
-        letter-spacing: 1px;
-        font-weight: 400;
+        padding-bottom: 20px;
       }
-      &:hover {
-        background-color: $colorSeven;
+      input {
+        width: 60%;
+        margin: 10px 0 10px;
+        height: 40px;
+        border: 1px solid $textColorTwo;
+        padding-left: 5px;
+        text-transform: uppercase;
+        font-family: $textFont;
+        background-color: transparent;
+        color: $textColorTwo;
+        cursor: pointer;
+        &::placeholder {
+          color: $textColorTwo;
+          letter-spacing: 1px;
+          font-weight: 400;
+        }
+        &:hover {
+          background-color: $colorSeven;
+        }
       }
     }
   }
@@ -114,48 +120,49 @@ html {
     font-family: $headingFont;
     font-size: 2rem;
     text-align: center;
-    padding-top: 40px;
+    padding-top: 100px;
     color: $textColorTwo;
     letter-spacing: 2px;
     text-transform: uppercase;
   }
-}
 
-.about-bg {
-  background: url("../../../img/photo-of-woman-wearing-eyeglasses-3184405.jpg")
-    center center/cover no-repeat;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  z-index: -1;
-  filter: brightness(90%);
-}
+  .about-bg {
+    background: url("../../../img/photo-of-woman-wearing-eyeglasses-3184405.jpg")
+      center center/cover no-repeat;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    filter: brightness(90%);
+  }
 
-.who-box {
-  margin: 100px;
-}
+  .who-box {
+    margin-top: 4%;
+    margin-left: 5%;
+  }
 
-.who-text {
-  width: 600px;
-  height: 650px;
-  text-align: left;
-  padding: 25px;
-  font-family: $textFont;
-  background-color: $bgColor;
-  border: 1px solid $textColorTwo;
-  h3 {
-    font-family: $headingFont;
-    color: $colorSeven;
-    text-transform: uppercase;
-    padding: 5px 0;
-    letter-spacing: 2px;
+  .who-text {
+    width: 600px;
+    height: 700px;
     text-align: left;
-    font-weight: bold;
-  }
-  p {
-    font-size: 1rem;
-    color: $textColorTwo;
-    letter-spacing: 1px;
+    padding: 40px;
+    font-family: $textFont;
+    background-color: $bgColor;
+    border: 1px solid $textColorTwo;
+    h3 {
+      font-family: $headingFont;
+      color: $colorSeven;
+      text-transform: uppercase;
+      padding: 5px 0;
+      letter-spacing: 2px;
+      text-align: left;
+      font-weight: bold;
+    }
+    p {
+      font-size: 1rem;
+      color: $textColorTwo;
+      letter-spacing: 1px;
+    }
   }
 }
 
@@ -169,60 +176,61 @@ html {
     font-family: $headingFont;
     font-size: 2rem;
     text-align: center;
-    padding-top: 40px;
+    padding-top: 80px;
     letter-spacing: 2px;
     text-transform: uppercase;
   }
-}
-.services-bg {
-  background: url("../../../img/action-architecture-blurred-background-building-386007.jpg")
-    center center/cover no-repeat;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  z-index: -1;
-  filter: brightness(80%);
-}
+  .services-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    div:nth-child(1) {
+      margin-left: 40%;
+      text-align: right;
+    }
+    div:nth-child(2) {
+      margin-left: -40%;
+      text-align: left;
+    }
+    div:nth-child(3) {
+      margin-left: 40%;
+      text-align: right;
+    }
+    div:nth-child(4) {
+      margin-left: -40%;
+      text-align: left;
+    }
+  }
+  .services-bg {
+    background: url("../../../img/action-architecture-blurred-background-building-386007.jpg")
+      center center/cover no-repeat;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    filter: brightness(80%);
+  }
 
-.services-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
-  div:nth-child(1) {
-    margin-left: 40%;
-    text-align: right;
-  }
-  div:nth-child(2) {
-    margin-left: -40%;
-    text-align: left;
-  }
-  div:nth-child(3) {
-    margin-left: 40%;
-    text-align: right;
-  }
-  div:nth-child(4) {
-    margin-left: -40%;
-    text-align: left;
-  }
-}
-.services-box {
-  width: 300px;
-  padding: 10px;
-  border: 1px solid $colorSix;
-  background-color: $bgColor;
-  h3 {
-    font-family: $headingFont;
-    font-size: 1.25rem;
-    margin-bottom: 8px;
-    letter-spacing: 2px;
-  }
-  p {
-    font-size: 0.85rem;
-  }
-  i {
-    margin-bottom: 10px;
+  .services-box {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid $colorSix;
+    background-color: $bgColor;
+    margin-bottom: 12px;
+    h3 {
+      font-family: $headingFont;
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+      letter-spacing: 2px;
+    }
+    p {
+      font-size: 0.85rem;
+    }
+    i {
+      margin-bottom: 10px;
+    }
   }
 }
 
@@ -235,54 +243,113 @@ html {
     font-family: $headingFont;
     font-size: 2rem;
     text-align: center;
-    padding-top: 40px;
+    padding-top: 100px;
     color: $colorSeven;
     letter-spacing: 2px;
     text-transform: uppercase;
   }
-}
+  .help-bg {
+    background: url("../../../img/cheerful-young-female-secretary-using-on-smartphone-at-4149075.jpg")
+      center center/cover no-repeat;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+  }
 
-.help-bg {
-  background: url("../../../img/cheerful-young-female-secretary-using-on-smartphone-at-4149075.jpg")
-    center center/cover no-repeat;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  z-index: -1;
-}
+  .help-text {
+    height: 400px;
+    width: 640px;
+    margin-left: 32px;
+    background: $bgColor;
+    border: 1px solid $colorSix;
+    color: $textColorTwo;
+    padding: 50px;
+    letter-spacing: 1px;
+    margin-top: 5%;
 
-.help-text {
-  height: 400px;
-  width: 640px;
-  margin: 100px;
-  background: $bgColor;
-  border: 1px solid $colorSix;
-  color: $textColorTwo;
-  padding: 50px;
-  letter-spacing: 1px;
-  h2 {
-    font-family: $headingFont;
+    h2 {
+      font-family: $headingFont;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+  }
+
+  .help-info {
+    display: flex;
+    justify-content: center;
     text-align: center;
-    margin-bottom: 10px;
+    align-items: center;
+    margin-top: 80px;
+  }
+
+  .help-box {
+    height: 150px;
+    padding-top: 40px;
+    width: 80%;
+    background-color: $colorTwo;
+    letter-spacing: 1px;
+    font-weight: bold;
+    i {
+      font-size: 2rem;
+      padding-bottom: 20px;
+    }
   }
 }
 
-.help-info {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
+// MEDIA QUERY
+
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .nav-links {
+    position: absolute;
+    right: 0;
+    height: 92vh;
+    top: 8vh;
+    background-color: $colorFive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    transform: translate(100%);
+    transition: transform 0.5s ease-in;
+    li {
+      opacity: 0;
+    }
+  }
+  .burger {
+    display: block;
+    cursor: pointer;
+  }
 }
 
-.help-box {
-  height: 150px;
-  padding-top: 40px;
-  width: 100%;
-  background-color: $colorTwo;
-  letter-spacing: 1px;
-  font-weight: bold;
-  i {
-    font-size: 2rem;
-    padding-bottom: 20px;
+.nav-active {
+  transform: translate(0);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translate(50px);
   }
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-8px, 8px);
+  width: 30px;
+}
+
+.toggle .line2 {
+  opacity: 0;
+}
+
+.toggle .line3 {
+  transform: rotate(45deg) translate(-6px, -6px);
+  width: 30px;
 }
