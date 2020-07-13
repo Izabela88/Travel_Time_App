@@ -10,6 +10,15 @@
   align-items: center;
 }
 
+@mixin container-mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 50px;
+  align-items: center;
+  max-width: 600px;
+}
+
 @mixin footer-div {
   border-bottom: 1px dotted orange;
   padding: 10px;
@@ -26,11 +35,9 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  .container {
-    @include container();
-  }
-}
+// .container {
+//   @include container();
+// }
 
 // Section Front-Page
 #front-page {
@@ -64,6 +71,10 @@ body {
 // Section Travel
 #section-travel {
   position: relative;
+
+  .container {
+    @include container();
+  }
 
   .travel-box {
     form {
@@ -118,6 +129,10 @@ body {
   height: 100vh;
   font-family: $textFont;
   position: relative;
+  .container {
+    @include container();
+  }
+
   h1 {
     font-family: $headingFont;
     font-size: 2rem;
@@ -174,6 +189,10 @@ body {
   font-family: $textFont;
   position: relative;
   color: $textColorTwo;
+  .container {
+    @include container();
+  }
+
   h1 {
     font-family: $headingFont;
     font-size: 2rem;
@@ -241,6 +260,10 @@ body {
   height: 100vh;
   font-family: $textFont;
   position: relative;
+  .container {
+    @include container();
+  }
+
   h1 {
     font-family: $headingFont;
     font-size: 2rem;
@@ -300,7 +323,6 @@ body {
 }
 
 // MEDIA QUERY
-
 @media screen and (max-width: 1024px) {
   #section-about {
     .who-text {
@@ -438,6 +460,9 @@ body {
   }
 
   #section-travel {
+    .container-mobile {
+      @include container-mobile();
+    }
     .travel-box {
       form {
         width: 100%;
@@ -452,6 +477,9 @@ body {
     h1 {
       font-size: 22px;
       padding-top: 50px;
+    }
+    .container-mobile {
+      @include container-mobile();
     }
     .who-box {
       margin: auto;
@@ -472,13 +500,17 @@ body {
       font-size: 22px;
       padding-top: 50px;
     }
+    .container-mobile {
+      @include container-mobile();
+    }
     .services-box {
       padding: 15px;
     }
     .services-info {
       margin-top: 30px;
       font-size: 10px;
-      margin: auto;
+      // margin: auto;
+      width: auto;
       margin-top: 30px;
       h3 {
         font-size: 14px;
@@ -506,6 +538,9 @@ body {
     h1 {
       font-size: 22px;
       padding-top: 50px;
+    }
+    .container-mobile {
+      @include container-mobile();
     }
     .help-text {
       margin: auto;
@@ -555,9 +590,11 @@ body {
   #section-about {
     h1 {
       font-size: 18px;
-      padding-top: 20px;
+      padding-top: 40px;
     }
     .who-text {
+      height: auto;
+      padding: 40px;
       h3 {
         font-size: 11px;
       }
@@ -569,13 +606,169 @@ body {
   #services-container {
     h1 {
       font-size: 18px;
-      padding-top: 20px;
+      padding-top: 40px;
     }
   }
   #section-help {
     h1 {
       font-size: 18px;
-      padding-top: 20px;
+      padding-top: 40px;
+    }
+    .help-container {
+      height: 300px;
+      margin-top: 65px;
     }
   }
 }
+
+@media screen and (max-width: 375px) {
+  #section-about {
+    .container-mobile {
+      padding: 30px;
+    }
+    .who-text {
+      padding: 29px;
+    }
+  }
+  #services-container {
+    h1 {
+      padding-top: 20px;
+    }
+  }
+  #section-help {
+    .container-mobile {
+      padding: 20px;
+    }
+    .help-container {
+      margin-top: 9px;
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  #section-about {
+    .container-mobile {
+      padding: 12px;
+    }
+    .who-text {
+      padding: 10px;
+      margin-top: 15px;
+    }
+  }
+  #services-container {
+    h1 {
+      padding-top: 8px;
+    }
+    .services-box {
+      width: auto;
+      padding: 5px;
+    }
+    .services-info {
+      margin-top: 5px;
+    }
+  }
+  #section-help {
+    h1 {
+      padding-top: 8px;
+    }
+    .container-mobile {
+      padding: 12px;
+    }
+    .help-container {
+      height: 300px;
+      margin-top: 15px;
+    }
+    .help-text {
+      margin-top: 10px;
+    }
+    .help-box {
+      padding: 5px;
+      i {
+        font-size: 15px;
+      }
+      p {
+        font-size: 11px;
+      }
+    }
+  }
+}
+
+// @media screen and (max-height: 823px) {
+//   @media screen and (max-width: 411px) {
+//     #section-about {
+//       h1 {
+//         padding-top: 35px;
+//       }
+//       .who-text {
+//         height: auto;
+//         padding: 30px;
+//         p {
+//           font-size: 11px;
+//         }
+//       }
+//     }
+//     #services-container {
+//       h1 {
+//         padding-top: 35px;
+//       }
+//       .services-info {
+//         padding: 25px;
+//       }
+//       .services-box {
+//         padding: 18px;
+//       }
+//     }
+//     #section-help {
+//       h1 {
+//         padding-top: 35px;
+//       }
+//       .help-info {
+//         margin-top: 30px;
+//       }
+//       .help-text {
+//         height: 400px;
+//         padding: 45px;
+//       }
+//     }
+//   }
+// }
+
+// @media screen and (max-height: 568px) {
+//   @media screen and (max-width: 321px) {
+//     #section-about {
+//       .who-text {
+//         padding: 10px;
+//         margin-top: 15px;
+//       }
+//     }
+//     #services-container {
+//       h1 {
+//         padding-top: 8px;
+//       }
+//       .services-box {
+//         width: auto;
+//         padding: 5px;
+//       }
+//       .services-info {
+//         margin-top: 5px;
+//       }
+//     }
+//     #section-help {
+//       h1 {
+//         padding-top: 8px;
+//       }
+//       .help-text {
+//         margin-top: 10px;
+//       }
+//       .help-box {
+//         padding: 5px;
+//         i {
+//           font-size: 15px;
+//         }
+//         p {
+//           font-size: 11px;
+//         }
+//       }
+//     }
+//   }
+// }

@@ -12,6 +12,10 @@
   @include box();
 }
 
+body {
+  background-color: $colorSix;
+}
+
 // Section Showcase
 #showcase {
   background-color: $colorSix;
@@ -163,10 +167,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  position: fixed;
+  position: relative;
   z-index: 130;
-  top: 185px;
-  left: 90vw;
+  top: 11vh;
+  left: 47vw;
   i {
     color: $textColorTwo;
   }
@@ -282,8 +286,8 @@
   }
 
   .add-trip {
-    top: 85px;
-    left: 45vw;
+    top: 95px;
+    left: 43vw;
     width: 60px;
     height: 60px;
     position: absolute;
@@ -298,6 +302,7 @@
   #showcase {
     .my-trip {
       padding: 14px;
+      width: 300px;
     }
     .trip-img {
       width: 210px;
