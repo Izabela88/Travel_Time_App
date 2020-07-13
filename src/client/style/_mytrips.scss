@@ -23,6 +23,137 @@
   height: auto;
   padding-top: 160px;
   padding-bottom: 20px;
+
+  .info-box {
+    height: 600px;
+    width: 600px;
+    text-align: center;
+    padding: 30px;
+    display: none;
+    font-family: $headingFont;
+    h1 {
+      font-size: 2rem;
+      padding-top: 20px;
+    }
+    h2 {
+      line-height: 50px;
+      letter-spacing: 2px;
+      padding-bottom: 20px;
+    }
+    p {
+      padding-bottom: 40px;
+      line-height: 30px;
+      letter-spacing: 1px;
+      font-weight: bold;
+    }
+  }
+  .icon {
+    width: 40%;
+  }
+
+  .back-btn {
+    display: inline-block;
+    padding: 15px 40px;
+    border-radius: 10rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.15rem;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    text-decoration: none;
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $colorSeven;
+      border-radius: 10rem;
+      z-index: -2;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background-color: darken($colorSeven, 10%);
+      transition: all 0.3s;
+      border-radius: 10rem;
+      z-index: -1;
+    }
+    &:hover {
+      color: #fff;
+      &:before {
+        width: 100%;
+      }
+    }
+  }
+
+  .my-trip {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: $colorSix;
+    width: 75%;
+    background-color: transparent;
+    border: 1px solid $textColorTwo;
+    font-family: $textFont;
+    background-color: $bgColor;
+    padding: 40px;
+    margin-bottom: 20px;
+  }
+
+  .trip-img {
+    height: 300px;
+    width: 400px;
+    margin-right: 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .trip-box {
+    font-family: $textFont;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+
+  .btn-box {
+    height: 100px;
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .remove-trip-btn {
+    color: $textColorOne;
+    text-decoration: none;
+    margin: 40px 10px;
+    background-color: $colorSeven;
+    padding: 1rem 1rem;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    &:hover {
+      background-color: $colorTwo;
+      cursor: pointer;
+    }
+  }
 }
 
 .add-trip {
@@ -116,133 +247,80 @@
   }
 }
 
-.info-box {
-  height: 600px;
-  width: 600px;
-  text-align: center;
-  padding: 30px;
-  display: none;
-  font-family: $headingFont;
-  h1 {
-    font-size: 2rem;
-    padding-top: 20px;
-  }
-  h2 {
-    line-height: 50px;
-    letter-spacing: 2px;
-    padding-bottom: 20px;
-  }
-  p {
-    padding-bottom: 40px;
-    line-height: 30px;
-    letter-spacing: 1px;
-    font-weight: bold;
-  }
-}
-.icon {
-  width: 40%;
-}
-
-.back-btn {
-  display: inline-block;
-  padding: 15px 40px;
-  border-radius: 10rem;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 1rem;
-  letter-spacing: 0.15rem;
-  transition: all 0.3s;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  text-decoration: none;
-  &:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: $colorSeven;
-    border-radius: 10rem;
-    z-index: -2;
-  }
-  &:before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
-    background-color: darken($colorSeven, 10%);
-    transition: all 0.3s;
-    border-radius: 10rem;
-    z-index: -1;
-  }
-  &:hover {
-    color: #fff;
-    &:before {
-      width: 100%;
+// MEDIA QUERY
+@media screen and (max-width: 1024px) {
+  #showcase {
+    .trip-img {
+      height: 150px;
     }
   }
 }
 
-.my-trip {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  background-color: $colorSix;
-  width: 75%;
-  background-color: transparent;
-  border: 1px solid $textColorTwo;
-  font-family: $textFont;
-  background-color: $bgColor;
-  padding: 40px;
-  margin-bottom: 20px;
+@media screen and (max-width: 768px) {
+  #showcase {
+    .my-trip {
+      flex-direction: column;
+    }
+
+    .trip-img {
+      height: 150px;
+      width: 245px;
+      margin: auto;
+    }
+  }
+  .add-trip {
+    left: 1vw;
+    top: 145px;
+  }
 }
 
-.trip-img {
-  height: 300px;
-  width: 400px;
-  margin-right: 50px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+@media screen and (max-width: 600px) {
+  #showcase {
+    .info-box {
+      width: 430px;
+    }
+  }
+
+  .add-trip {
+    top: 85px;
+    left: 45vw;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+  }
+  .my-super-cool-btn span {
+    width: 50px;
+    height: 50px;
+  }
 }
 
-.trip-box {
-  font-family: $textFont;
-  width: 400px;
-  height: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-.btn-box {
-  height: 100px;
-  width: 400px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.remove-trip-btn {
-  color: $textColorOne;
-  text-decoration: none;
-  margin: 40px 10px;
-  background-color: $colorSeven;
-  padding: 1rem 1rem;
-  width: 200px;
-  height: 50px;
-  text-align: center;
-  &:hover {
-    background-color: $colorTwo;
-    cursor: pointer;
+@media screen and (max-width: 414px) {
+  #showcase {
+    .my-trip {
+      padding: 14px;
+    }
+    .trip-img {
+      width: 210px;
+    }
+    .trip-box {
+      width: 290px;
+    }
+    .box {
+      width: 296px;
+      height: 64px;
+      padding: 24px;
+    }
+    .btn-box {
+      width: 290px;
+    }
+    .info-box {
+      width: 300px;
+      h2 {
+        font-size: 17px;
+      }
+      p {
+        font-size: 14px;
+      }
+    }
   }
 }
