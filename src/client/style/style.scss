@@ -35,10 +35,6 @@ html {
   scroll-behavior: smooth;
 }
 
-// .container {
-//   @include container();
-// }
-
 // Section Front-Page
 #front-page {
   background: url("../../../img/cafe-camera-classic-close-up-413960.jpg") center
@@ -692,83 +688,3 @@ html {
     }
   }
 }
-
-// @media screen and (max-height: 823px) {
-//   @media screen and (max-width: 411px) {
-//     #section-about {
-//       h1 {
-//         padding-top: 35px;
-//       }
-//       .who-text {
-//         height: auto;
-//         padding: 30px;
-//         p {
-//           font-size: 11px;
-//         }
-//       }
-//     }
-//     #services-container {
-//       h1 {
-//         padding-top: 35px;
-//       }
-//       .services-info {
-//         padding: 25px;
-//       }
-//       .services-box {
-//         padding: 18px;
-//       }
-//     }
-//     #section-help {
-//       h1 {
-//         padding-top: 35px;
-//       }
-//       .help-info {
-//         margin-top: 30px;
-//       }
-//       .help-text {
-//         height: 400px;
-//         padding: 45px;
-//       }
-//     }
-//   }
-// }
-
-// @media screen and (max-height: 568px) {
-//   @media screen and (max-width: 321px) {
-//     #section-about {
-//       .who-text {
-//         padding: 10px;
-//         margin-top: 15px;
-//       }
-//     }
-//     #services-container {
-//       h1 {
-//         padding-top: 8px;
-//       }
-//       .services-box {
-//         width: auto;
-//         padding: 5px;
-//       }
-//       .services-info {
-//         margin-top: 5px;
-//       }
-//     }
-//     #section-help {
-//       h1 {
-//         padding-top: 8px;
-//       }
-//       .help-text {
-//         margin-top: 10px;
-//       }
-//       .help-box {
-//         padding: 5px;
-//         i {
-//           font-size: 15px;
-//         }
-//         p {
-//           font-size: 11px;
-//         }
-//       }
-//     }
-//   }
-// }
