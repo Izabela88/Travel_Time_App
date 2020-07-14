@@ -13,11 +13,11 @@ Before running project run npm install in your command line.
 
 To run the app in development environment follow this steps:
 Front-End:
--npm run build-dev
+npm run build-dev
 Back-End:
--npm run start
+npm run start
 Jest testing:
--npm run test
+npm run test
 
 ## Build with
 
