@@ -112,7 +112,6 @@ async function performAction(e) {
 
 // Store data in Local Storage
 function storeTripInLocalStorage(trip) {
-  console.log("save data");
   let trips;
   if (localStorage.getItem("trips") === null) {
     trips = [];

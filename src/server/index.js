@@ -25,8 +25,11 @@ app.post('/', function (_req, res) {
   res.redirect('/trips')
 })
 
+app.get('/test', async (req, res) => {
+  res.json({ message: 'pass!' })
+})
 
-// designates what port the app will listen to for incoming requests
+// // designates what port the app will listen to for incoming requests
 app.listen(8081, function () {
   console.log('Server 8081!')
 })
