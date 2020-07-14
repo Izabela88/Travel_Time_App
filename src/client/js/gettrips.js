@@ -150,4 +150,3 @@ function clearTripFromLocalStorage() {
   localStorage.clear();
 }
 
-

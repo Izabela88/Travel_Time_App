@@ -5,9 +5,11 @@ import { createTravelCard } from './js/gettrips';
 import { myTrips } from './js/gettrips';
 
 
+
 export {
   navSlide,
   performAction,
   createTravelCard,
   myTrips
+
 }
