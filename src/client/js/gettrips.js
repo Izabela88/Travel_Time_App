@@ -114,7 +114,6 @@ function removeTrip(e) {
     removeTripFromLocalStorage(e.target.parentElement.parentElement.parentElement);
   }
 }
-console.log()
 
 // Function from LS
 function removeTripFromLocalStorage(tripItem) {
