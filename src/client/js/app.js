@@ -93,46 +93,49 @@ const getImages = async (url, name, subText) => {
     console.log(error)
   }
 }
+if (typeof window !== "undefined") {
 
-// When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar 
-var prevScrollpos = window.pageYOffset;
-window.onscroll = function () {
-  var currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) {
-    document.querySelector("#navbar").style.top = "0";
-  } else {
-    document.querySelector("#navbar").style.top = "-250px";
+  // When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar 
+  var prevScrollpos = window.pageYOffset;
+  window.onscroll = function () {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      document.querySelector("#navbar").style.top = "0";
+    } else {
+      document.querySelector("#navbar").style.top = "-250px";
+    }
+    prevScrollpos = currentScrollPos;
   }
-  prevScrollpos = currentScrollPos;
+
+  // 'Scroll to top' button
+  const backToTopButton = document.querySelector("#back-to-top-btn");
+
+  backToTopButton.addEventListener("click", backToTop);
+
+  function backToTop() {
+    window.scroll(0, 0);
+  }
+
+  // Scroll to section 
+  const navbarLinks = document.querySelectorAll("#navbar a");
+
+  navbarLinks.forEach(elem => elem.addEventListener("click", navbarLinkClick));
+
+  function navbarLinkClick(event) {
+    smoothScroll(event);
+  }
+
+  // Smooth scrolling
+  function smoothScroll(event) {
+    event.preventDefault(e);
+    const targetId = event.currentTarget.getAttribute("href");
+    window.scrollTo({
+      top: document.querySelector(targetId).offsetTop,
+      behavior: "smooth"
+    });
+  }
 }
 
-// Scroll to section 
-const navbarLinks = document.querySelectorAll("#navbar a");
-
-navbarLinks.forEach(elem => elem.addEventListener("click", navbarLinkClick));
-
-function navbarLinkClick(event) {
-  smoothScroll(event);
-}
-
-// Smooth scrolling
-function smoothScroll(event) {
-  event.preventDefault(e);
-  const targetId = event.currentTarget.getAttribute("href");
-  window.scrollTo({
-    top: document.querySelector(targetId).offsetTop,
-    behavior: "smooth"
-  });
-}
-
-// 'Scroll to top' button
-const backToTopButton = document.querySelector("#back-to-top-btn");
-
-backToTopButton.addEventListener("click", backToTop);
-
-function backToTop() {
-  window.scroll(0, 0);
-}
 
 // Responsive Navigation Bar
 const navSlide = () => {
