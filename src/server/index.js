@@ -16,11 +16,11 @@ app.use(bodyParser.json());
 const cors = require('cors');
 app.use(cors());
 
-app.use(express.static('dist'))
+app.use(express.static(__dirname + '/dist'))
 
 
 app.get('/', function (_req, res) {
-  res.sendFile(appRoot + '/dist/index.html')
+  res.sendFile(__dirname + 'index.html')
 })
 app.post('/', function (_req, res) {
   res.redirect('/trips')

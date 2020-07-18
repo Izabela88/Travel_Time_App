@@ -6,7 +6,6 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const WorkboxPlugin = require('workbox-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const dist = path.resolve(__dirname, "src/server/dist");
 
 module.exports = {
   entry: {
@@ -20,7 +19,8 @@ module.exports = {
     minimizer: [new TerserPlugin({}), new OptimizeCssAssetsPlugin({})],
   },
   output: {
-    path: dist,
+    path: __dirname,
+    publicPath: '/',
     libraryTarget: 'var',
     library: 'Client'
   },
