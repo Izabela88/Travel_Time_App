@@ -2,6 +2,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 var path = require('path');
+var appDir = path.dirname(require.main.filename);
 
 const express = require('express');
 const app = express();
@@ -19,7 +20,7 @@ app.use(express.static('dist'))
 
 
 app.get('/', function (_req, res) {
-  res.sendFile(__dirname + '../../dist/index.html')
+  res.sendFile(appDir + 'dist/index.html')
 })
 app.post('/', function (_req, res) {
   res.redirect('/trips')
