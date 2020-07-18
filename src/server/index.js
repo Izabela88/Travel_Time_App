@@ -20,7 +20,7 @@ app.use(express.static(__dirname + '/dist'))
 
 
 app.get('/', function (_req, res) {
-  res.sendFile(__dirname + 'index.html')
+  res.sendFile(__dirname + '/index.html')
 })
 app.post('/', function (_req, res) {
   res.redirect('/trips')
