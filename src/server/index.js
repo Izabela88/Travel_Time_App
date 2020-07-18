@@ -20,7 +20,7 @@ app.use(express.static('dist'))
 
 
 app.get('/', function (_req, res) {
-  res.sendFile(appRoot + '/dist/index.html')
+  res.sendFile(appRoot + '../../dist/index.html')
 })
 app.post('/', function (_req, res) {
   res.redirect('/trips')
