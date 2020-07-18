@@ -38,7 +38,6 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "start": "node server.js",
-    "heroku-postbuild": "webpack -p",
     "build-prod": "webpack --config webpack.prod.js",
     "build-dev": "webpack-dev-server  --config webpack.dev.js --open"
   },
