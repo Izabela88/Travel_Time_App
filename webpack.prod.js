@@ -6,6 +6,7 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const dist = path.resolve(__dirname, "src/server/dist");
 
 module.exports = {
   entry: {
@@ -18,6 +19,7 @@ module.exports = {
     minimizer: [new TerserPlugin({}), new OptimizeCSSAssetsPlugin({})],
   },
   output: {
+    path: dist,
     libraryTarget: 'var',
     library: 'Client'
   },

@@ -20,7 +20,7 @@ app.use(express.static('dist'))
 
 
 app.get('/', function (_req, res) {
-  res.sendFile(appRoot + '../../dist/index.html')
+  res.sendFile(appRoot + '/dist/index.html')
 })
 app.post('/', function (_req, res) {
   res.redirect('/trips')
@@ -32,7 +32,7 @@ app.get('/test', async (req, res) => {
 
 // // designates what port the app will listen to for incoming requests
 
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 8081;
 
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`)
