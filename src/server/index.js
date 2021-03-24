@@ -2,6 +2,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 var path = require('path');
+global.appRoot = path.resolve(__dirname);
 
 const express = require('express');
 const app = express();
@@ -15,23 +16,23 @@ app.use(bodyParser.json());
 const cors = require('cors');
 app.use(cors());
 
-app.use(express.static('dist'))
-
+app.use(express.static(__dirname + '/dist'));
 
 app.get('/', function (_req, res) {
-  res.sendFile(__dirname + '../../dist/index.html')
-})
+  res.sendFile(__dirname + '/index.html');
+});
 app.post('/', function (_req, res) {
-  res.redirect('/trips')
-})
+  res.redirect('/trips');
+});
 
 app.get('/test', async (req, res) => {
-  res.json({ message: 'pass!' })
-})
+  res.json({ message: 'pass!' });
+});
 
 // // designates what port the app will listen to for incoming requests
-app.listen(8081, function () {
-  console.log('Server 8081!')
-})
 
-var PORT = process.env.PORT || 8081;
+var PORT = process.env.PORT || 8080;
+
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
+});

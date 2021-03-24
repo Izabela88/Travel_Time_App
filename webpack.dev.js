@@ -19,6 +19,8 @@ module.exports = {
     minimizer: [new TerserPlugin({}), new OptimizeCssAssetsPlugin({})],
   },
   output: {
+    path: __dirname,
+    publicPath: '/',
     libraryTarget: 'var',
     library: 'Client'
   },
